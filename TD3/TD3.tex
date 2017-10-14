@@ -40,7 +40,7 @@
 \begin{center}
 \includegraphics[width=300px]{img/part1/AlleeI.png}
 \end{center}
-Paramètres de modélisation : $K=2$  ; $r=0.4$ 
+Paramètres de modélisation : $K=2$  ; $r=0.5$ ; $A=0.5$ ; $I$ varie de 0 à 1 avec un pas de 0.1 
 \paragraph{}
 
 \newpage
@@ -49,7 +49,7 @@ Paramètres de modélisation : $K=2$  ; $r=0.4$
 \begin{center}
 \includegraphics[width=300px]{img/part1/TrajI.png}
 \end{center}
-Paramètres de modélisation : $a=1$ ; $h=0.1$ ; $K=2$  ; $r=0.4$
+Paramètres de modélisation : $a=0.6$ ; $K=2$  ; $r=0.5$ ; $A=0.5$ ; $I$ varie de 0 à 1 avec un pas de 0.1
 \paragraph{}
 
 \subsubsection{Modèle avec variation de K}
@@ -58,14 +58,14 @@ Paramètres de modélisation : $a=1$ ; $h=0.1$ ; $K=2$  ; $r=0.4$
 \begin{center}
 \includegraphics[width=300px]{img/part1/AlleeK.png}
 \end{center}
-Paramètres de modélisation : $K=2$  ; $r$ varie de 0 à 1 avec un pas de 0.1
+Paramètres de modélisation : $r=1$ ; $A=0.8$ ; $I=0.05$ ; $K$ varie de 1.5 à 2.5 avec un pas de 0.1
 \paragraph{}
 
 \paragraph{Discrétisation du modèle}
 \begin{center}
 \includegraphics[width=300px]{img/part1/TrajK.png}
 \end{center}
-Paramètres de modélisation : $r=0.4$  ; $r$ varie de 1 à 1.6 avec un pas de 0.1
+Paramètres de modélisation : $a=0.7$ ; $r=1$ ; $A=0.8$ ; $I=0.05$ ; $K$ varie de 1.5 à 2.5 avec un pas de 0.1
 \paragraph{}
 
 \subsubsection{Modèle avec variation de A}
@@ -74,14 +74,14 @@ Paramètres de modélisation : $r=0.4$  ; $r$ varie de 1 à 1.6 avec un pas de 0
 \begin{center}
 \includegraphics[width=300px]{img/part1/AlleeA.png}
 \end{center}
-Paramètres de modélisation : $r=0.4$  ; $K$ varie de 1 à 1.6 avec un pas de 0.1
+Paramètres de modélisation : $I=0.1$ ; $K=2$ ; $r=1$  ; $A$ varie de 0.5 à 1.5 avec un pas de 0.1
 \paragraph{}
 
 \paragraph{Discrétisation du modèle}
 \begin{center}
 \includegraphics[width=300px]{img/part1/TrajA.png}
 \end{center}
-Paramètres de modélisation : $r=0.4$  ; $K$ varie de 1 à 1.6 avec un pas de 0.1
+Paramètres de modélisation : $a=0.7$ ; $I=0.1$ ; $K=2$ ; $r=1$  ; $A$ varie de 0.5 à 1.5 avec un pas de 0.1
 \paragraph{}
 
 \subsubsection{Modèle avec variation de la population initiale}
@@ -90,7 +90,8 @@ Paramètres de modélisation : $r=0.4$  ; $K$ varie de 1 à 1.6 avec un pas de 0
 \begin{center}
 \includegraphics[width=300px]{img/part1/TrajPop.png}
 \end{center}
-
+Paramètres de modélisation : $A=0.5$ ; $I=0.1$ ; $K=2$ ; $r=0.25$  ; $a$ varie de 0.5 à 1.5 avec un pas de 0.1
+\paragraph{}
 
 \newpage
 
@@ -105,41 +106,41 @@ Paramètres de modélisation : $r=0.4$  ; $K$ varie de 1 à 1.6 avec un pas de 0
 
 \subsection{Etude numérique}
 
-\subsubsection{Modèle logistique avec effet Allee}
+\subsubsection{Modèle logistique}
 
-\paragraph{Vitesse d'accroissement du modèle logistique sans / avec effet Allee}
+\paragraph{Vitesse d'accroissement}
 \begin{center}
 %\includegraphics[width=300px]{allee.png}
 \end{center}
-Paramètres de modélisation : $A=1$  ; $K=2$  ; $r=0.4$
+Paramètres de modélisation : 
 \paragraph{}
 
 \paragraph{Discretisation}
 \begin{center}
 %\includegraphics[width=300px]{discretisationAllee.png}
 \end{center}
-Paramètres de modélisation : $A=1$  ; $K=2$  ; $r=0.4$  ; $a = 1.2$ ; $h=0.1$
+Paramètres de modélisation : 
 \paragraph{}
 
-\subsubsection{Modèle logistique avec effet Allee avec variation de a}
+\subsubsection{Modèle logistique}
 \begin{center}
 %\includegraphics[width=300px]{discretisationAlleea.PNG}
 \end{center}
-Paramètres de modélisation : $A=1$  ; $K=2$  ; $r=0.4$  ; $h=0.1$ ; $a$ varie de 0.5 à 2.5 avec un pas de 0.1
+Paramètres de modélisation :
 \paragraph{}
 
-\subsubsection{Modèle logistique avec effet Allee avec variation de K}
+\subsubsection{Modèle logistique}
 \begin{center}
 %\includegraphics[width=300px]{discretisationAlleeK.PNG}
 \end{center}
-Paramètres de modélisation : $A=1$  ; $a=1.2$  ; $r=0.4$  ; $h=0.1$ ; $K$ varie de 1.5 à 2.5 avec un pas de 0.1
+Paramètres de modélisation : 
 \paragraph{}
 
-\subsubsection{Modèle logistique avec effet Allee avec variation de A}
+\subsubsection{Modèle logistique}
 \begin{center}
 %\includegraphics[width=300px]{discretisationAlleeSeuil.PNG}
 \end{center}
-Paramètres de modélisation : $K=2$  ; $a=1.2$  ; $r=0.4$  ; $h=0.1$ ; $A$ varie de 0.5 à 1.5 avec un pas de 0.1
+Paramètres de modélisation : 
 \paragraph{}
 
 \subsection{Etude mathématique}
@@ -193,7 +194,7 @@ Paramètres de modélisation : $K=2$  ; $a=1.2$  ; $r=0.4$  ; $h=0.1$ ; $A$ vari
 
 \subsection{Modèle logistique}
 
-\subsubsection{Vitesse d'accroissements du modèle logistique sans / avec effet Allee}
+\subsubsection{Vitesse d'accroissement}
 
 \begin{verbatim}
 \end{verbatim}

@@ -7,10 +7,6 @@ h = 0.05;
 // pas de temps
 ndate = 0:h:20;
 a = 0.7;
-// condition initiale
-//
-// Discrétisation de l'équation differentielle
-
 
 function f = allee(x)
     f = r * x .* (x / A - 1 ) .* (1 - x / K)+I
