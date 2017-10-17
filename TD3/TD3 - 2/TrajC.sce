@@ -3,7 +3,7 @@ clf
 
 Cvect = 0.2:0.05:0.4; // variable qui varie
 // variables du modèles
-r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; h = 0.05 ; I=0.2 ; a = 1 ;
+r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; h = 0.05 ; a = 1 ;
 ndate = 0:h:20; // vecteur des instants
 
 function f = predation(x) // fonction qui calcule la vitesse d'accroissement

@@ -2,7 +2,7 @@ clear
 clf
 
 // variables du modèles
-r = 1; A = 0.5; K = 2.5; B=0.5;
+r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ;
 Cvect = 0.2:0.05:0.4; // variable qui varie
 x = linspace(0, 2.5, 301);
 
