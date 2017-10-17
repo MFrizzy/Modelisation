@@ -12,7 +12,7 @@ endfunction
 x(1)=a; // Initialisation de la population initiale
 
 for i=1:11; // Boucle qui va dessiner les différentes courbes
-    I=Ivect(i); // vecteur contenant les différentes valeurs de I
+    I=Ivect(i); // Assignation valeur qui varie
     for n = 1:length(ndate) - 1 // Boucle qui calcule la courbe de la population
         x(n+1) = x(n) + h * allee_img(x(n)); // Calcul de la population
     end 

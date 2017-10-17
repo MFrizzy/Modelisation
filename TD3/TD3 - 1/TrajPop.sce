@@ -10,7 +10,7 @@ function f = allee_img(x) // fonction qui calcule la vitesse d'accroissement
 endfunction
 
 for i=1:11; // Boucle qui va dessiner les différentes courbes
-    x(1)=avect(i); // vecteur contenant les différentes valeurs de a
+    x(1)=avect(i); // Assignation valeur qui varie
     for n = 1:length(ndate) - 1 // Boucle qui calcule la courbe de la population
         x(n+1) = x(n) + h * allee_img(x(n)); // Calcul de la population
     end 

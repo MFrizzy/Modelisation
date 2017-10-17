@@ -10,7 +10,7 @@ function f = allee_imig(x) // fonction qui calcule la vitesse d'accroissement
 endfunction
 
 for i=1:11; // Bouclae qui va dessiner les différentes courbes
-    I=Ivect(i); // vecteur contenant les différentes valeurs de I
+    I=Ivect(i); // Assignation valeur qui varie
     plot2d(x, allee_imig(x), style = i) // Tracé de la vitesse d'accroissement
 end
 

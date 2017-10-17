@@ -36,12 +36,13 @@
 
 \subsubsection{Modèle avec variation de I}
 
-\paragraph{Courbe de la vitesse d'accroissement}
+\paragraph{Courbes de la vitesse d'accroissement}
 \begin{center}
 \includegraphics[width=300px]{img/part1/AlleeI.png}
 \end{center}
 Paramètres de modélisation : $K=2$  ; $r=0.5$ ; $A=0.5$ ; $I$ varie de 0 à 1 avec un pas de 0.1 
 \paragraph{}
+Sur ce graphique on peut voir les différentes courbes de la vitesse d'accroissement pour différentes valeurs de I. On remarque que avec un $i$ assez grand, l'effet Allee n'éteint plus la population mais ralentit seulement sa croissance. En effet 2 points d'équilibres peuvent disparaïtre pour certaines valeurs de I.
 
 \newpage
 
@@ -54,7 +55,7 @@ Paramètres de modélisation : $a=0.6$ ; $K=2$  ; $r=0.5$ ; $A=0.5$ ; $I$ varie 
 
 \subsubsection{Modèle avec variation de K}
 
-\paragraph{Courbe de la vitesse d'accroissement}
+\paragraph{Courbes de la vitesse d'accroissement}
 \begin{center}
 \includegraphics[width=300px]{img/part1/AlleeK.png}
 \end{center}
@@ -70,7 +71,7 @@ Paramètres de modélisation : $a=0.7$ ; $r=1$ ; $A=0.8$ ; $I=0.05$ ; $K$ varie 
 
 \subsubsection{Modèle avec variation de A}
 
-\paragraph{Courbe de la vitesse d'accroissement}
+\paragraph{Courbes de la vitesse d'accroissement}
 \begin{center}
 \includegraphics[width=300px]{img/part1/AlleeA.png}
 \end{center}
@@ -106,39 +107,53 @@ Paramètres de modélisation : $A=0.5$ ; $I=0.1$ ; $K=2$ ; $r=0.25$  ; $a$ varie
 
 \subsection{Etude numérique}
 
-\subsubsection{Modèle logistique}
+\subsubsection{Modèle}
 
 \paragraph{Vitesse d'accroissement}
 \begin{center}
-%\includegraphics[width=300px]{allee.png}
+\includegraphics[width=300px]{img/part2/Log.png}
 \end{center}
 Paramètres de modélisation : 
 \paragraph{}
+
 
 \paragraph{Discretisation}
 \begin{center}
-%\includegraphics[width=300px]{discretisationAllee.png}
+\includegraphics[width=300px]{img/part2/Traj.png}
 \end{center}
 Paramètres de modélisation : 
 \paragraph{}
 
-\subsubsection{Modèle logistique}
-\begin{center}
-%\includegraphics[width=300px]{discretisationAlleea.PNG}
-\end{center}
-Paramètres de modélisation :
-\paragraph{}
+\subsubsection{Modèle avec variation de B}
 
-\subsubsection{Modèle logistique}
+\paragraph{Vitesse d'accroissement}
 \begin{center}
-%\includegraphics[width=300px]{discretisationAlleeK.PNG}
+\includegraphics[width=300px]{img/part2/LogB.png}
 \end{center}
 Paramètres de modélisation : 
 \paragraph{}
 
-\subsubsection{Modèle logistique}
+
+\paragraph{Discretisation}
 \begin{center}
-%\includegraphics[width=300px]{discretisationAlleeSeuil.PNG}
+\includegraphics[width=300px]{img/part2/TrajB.png}
+\end{center}
+Paramètres de modélisation : 
+\paragraph{}
+
+\subsubsection{Modèle avec variation de C}
+
+\paragraph{Vitesse d'accroissement}
+\begin{center}
+\includegraphics[width=300px]{img/part2/logC.png}
+\end{center}
+Paramètres de modélisation : 
+\paragraph{}
+
+
+\paragraph{Discretisation}
+\begin{center}
+\includegraphics[width=300px]{img/part2/TrajC.png}
 \end{center}
 Paramètres de modélisation : 
 \paragraph{}
@@ -171,7 +186,7 @@ function f = allee_imig(x) // fonction qui calcule la vitesse d'accroissement
 endfunction
 
 for i=1:11; // Bouclae qui va dessiner les différentes courbes
-    I=Ivect(i); // vecteur contenant les différentes valeurs de I
+    I=Ivect(i); // Assignation valeur qui varie
     plot2d(x, allee_imig(x), style = i) // Tracé de la vitesse d'accroissement
 end
 
@@ -198,7 +213,7 @@ endfunction
 x(1)=a; // Initialisation de la population initiale
 
 for i=1:11; // Boucle qui va dessiner les différentes courbes
-    I=Ivect(i); // vecteur contenant les différentes valeurs de I
+    I=Ivect(i); // Assignation valeur qui varie
     for n = 1:length(ndate) - 1 // Boucle qui calcule la courbe de la population
         x(n+1) = x(n) + h * allee_img(x(n)); // Calcul de la population
     end 
@@ -228,7 +243,7 @@ function f = allee_imig(x) // fonction qui calcule la vitesse d'accroissement
 endfunction
 
 for i=1:11; // Boucle qui va dessiner les différentes courbes
-    K=Kvect(i); // vecteur contenant les différentes valeurs de K
+    K=Kvect(i); // Assignation valeur qui varie
     plot2d(x, allee_imig(x), style = i) // Tracé de la vitesse d'accroissement
 end
 
@@ -255,7 +270,7 @@ endfunction
 x(1)=a; // Initialisation de la population initiale
 
 for i=1:11; // Boucle qui va dessiner les différentes courbes
-    K=Kvect(i); // vecteur contenant les différentes valeurs de K
+    K=Kvect(i); // Assignation valeur qui varie
     for n = 1:length(ndate) - 1 // Boucle qui calcule la courbe de la population
         x(n+1) = x(n) + h * allee_img(x(n)); // Calcul de la population
     end 
@@ -285,7 +300,7 @@ function f = allee_imig(x) // fonction qui calcule la vitesse d'accroissement
 endfunction
 
 for i=1:11; // Boucle qui va dessiner les différentes courbes
-    A=Avect(i); // vecteur contenant les différentes valeurs de A
+    A=Avect(i); // Assignation valeur qui varie
     plot2d(x, allee_imig(x), style = i) // Tracé de la vitesse d'accroissement
 end
 
@@ -312,7 +327,7 @@ endfunction
 x(1)=a; // Initialisation de la population initiale
 
 for i=1:11; // Boucle qui va dessiner les différentes courbes
-    A=Avect(i); // vecteur contenant les différentes valeurs de A
+    A=Avect(i); // Assignation valeur qui varie
     for n = 1:length(ndate) - 1 // Boucle qui calcule la courbe de la population
         x(n+1) = x(n) + h * allee_img(x(n)); // Calcul de la population
     end 
@@ -340,7 +355,7 @@ function f = allee_img(x) // fonction qui calcule la vitesse d'accroissement
 endfunction
 
 for i=1:11; // Boucle qui va dessiner les différentes courbes
-    x(1)=avect(i); // vecteur contenant les différentes valeurs de a
+    x(1)=avect(i); // Assignation valeur qui varie
     for n = 1:length(ndate) - 1 // Boucle qui calcule la courbe de la population
         x(n+1) = x(n) + h * allee_img(x(n)); // Calcul de la population
     end 
@@ -355,31 +370,189 @@ a.grid=[5,5];
 
 \section{Etude du modèle logistique avec prédation - Scripts Scilab}
 
-\subsection{Modèle logistique}
+\subsection{Modèle}
 
 \subsubsection{Vitesse d'accroissement}
 
 \begin{verbatim}
+clear
+clf
+
+// variables du modèles
+r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; C=0.3 ;
+x = linspace(0, 2.5, 301);
+
+function f = predation(x) // fonction qui calcule la vitesse d'accroissement
+    f =r * x .* (1 - x / K) - B * (x.^2 ./ (x.^2 + C^2)) // opération vectorielle
+endfunction
+
+plot2d(x, predation(x), style = 2); // Tracé de la vitesse d'accroissement
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
 \end{verbatim}
 
 \subsubsection{Discretisation}
 
 \begin{verbatim}
+clear
+clf
+
+// variables du modèles
+r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; C=0.4 ; h = 0.05 ; I=0.2 ; a = 1;
+ndate = 0:h:20; // vecteur des instants
+
+function f = predation(x) // fonction qui calcule la vitesse d'accroissement
+    f =r * x .* (1 - x / K) - B * (x.^2 ./ (x.^2 + C^2)) // opération vectorielle
+endfunction
+
+x(1) = a; // Initialisation de la population initiale
+
+for n = 1:length(ndate) - 1 // Boucle qui calcule la courbe de la population
+    x(n+1) = x(n) + h * predation(x(n)); // Calcul de la population
+end
+
+plot2d(ndate, x, style = 2) // Tracé de la trajectoire
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
 \end{verbatim}
 
-\subsection{Modèle logistique}
+\subsection{Modèle avec variation de B}
+
+\subsubsection{Vitesse d'accroissement}
 
 \begin{verbatim}
+clear
+clf
+
+// variables du modèles
+r = 1 ; A = 0.5 ; K = 2.5 ; C=0.4 ;
+Bvect = 0.3:0.1:0.7; // variable qui varie
+x = linspace(0, 2.5, 301);
+
+function f = predation(x) // fonction qui calcule la vitesse d'accroissement
+    f =r * x .* (1 - x / K) - B * (x.^2 ./ (x.^2 + C^2)) // opération vectorielle
+endfunction
+
+for i=1:5 // Boucle qui va dessiner les différentes courbes
+
+    B=Bvect(i); // Assignation valeur qui varie
+
+    plot2d(x, predation(x), style = i); // Tracé de la vitesse d'accroissement
+
+end
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
 \end{verbatim}
 
-\subsection{Modèle logistique}
+\subsubsection{Discretisation}
 
 \begin{verbatim}
+clear
+clf
+
+Bvect = 0.3:0.1:0.7; // variable qui varie
+// variables du modèles
+r = 1 ; A = 0.5 ; K = 2.5 ; C=0.4 ; a = 1 ; h = 0.05 ; I=0.2 ;
+ndate = 0:h:20; // vecteur des instants
+
+function f = predation(x) // fonction qui calcule la vitesse d'accroissement
+    f =r * x .* (1 - x / K) - B * (x.^2 ./ (x.^2 + C^2)) // opération vectorielle
+endfunction
+
+for i=1:5 // Boucle qui va dessiner les différentes courbes
+    
+    B=Bvect(i); // Assignation valeur qui varie
+    x(1) = a; // Initialisation de la population initiale
+    
+    for n = 1:length(ndate) - 1 // Boucle qui calcule la courbe de la population
+        x(n+1) = x(n) + h * predation(x(n)); // Calcul de la population
+    end
+    
+    plot2d(ndate, x, style = i) // Tracé de la trajectoire
+
+end
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
 \end{verbatim}
 
-\subsection{Modèle logistique}
+
+\subsection{Modèle avec variation de C}
+
+\subsubsection{Vitesse d'accroissement}
 
 \begin{verbatim}
+clear
+clf
+
+// variables du modèles
+r = 1; A = 0.5; K = 2.5; B=0.5;
+Cvect = 0.2:0.05:0.4; // variable qui varie
+x = linspace(0, 2.5, 301);
+
+function f = predation(x) // fonction qui calcule la vitesse d'accroissement
+    f =r * x .* (1 - x / K) - B * (x.^2 ./ (x.^2 + C^2)) // opération vectorielle
+endfunction
+
+for i=1:5 // Boucle qui va dessiner les différentes courbes
+ 
+    C=Cvect(i); // Assignation valeur qui varie
+
+    plot2d(x, predation(x), style = i); // Tracé de la vitesse d'accroissement
+
+end
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
 \end{verbatim}
+
+\subsubsection{Discretisation}
+
+\begin{verbatim}
+clear
+clf
+
+Cvect = 0.2:0.05:0.4; // variable qui varie
+// variables du modèles
+r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; h = 0.05 ; I=0.2 ; a = 1 ;
+ndate = 0:h:20; // vecteur des instants
+
+function f = predation(x) // fonction qui calcule la vitesse d'accroissement
+    f =r * x .* (1 - x / K) - B * (x.^2 ./ (x.^2 + C^2)) // opération vectorielle
+endfunction
+
+for i=1:5 // Boucle qui va dessiner les différentes courbes
+    
+    C=Cvect(i); // Assignation valeur qui varie
+    x(1) = a; // Initialisation de la population initiale
+    
+    for n = 1:length(ndate) - 1 // Boucle qui calcule la courbe de la population
+        x(n+1) = x(n) + h * predation(x(n)); // Calcul de la population
+    end
+    
+    plot2d(ndate, x, style = i) // Tracé de la trajectoire
+
+end
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+\end{verbatim}
+
+
 
 \end{document}
