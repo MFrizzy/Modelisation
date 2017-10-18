@@ -42,7 +42,7 @@
 \end{center}
 Paramètres de modélisation : $K=2$  ; $r=0.5$ ; $A=0.5$ ; $I$ varie de 0 à 1 avec un pas de 0.1 
 \paragraph{}
-Sur ce graphique on peut voir les différentes courbes de la vitesse d'accroissement pour différentes valeurs de $I$. On peut voir que les variations de $I$ augmente la vitesse d'acroissement de manière constante, cela influt donc aussi sur les points d'équilibres du modèle, en effet on voit bien que pour différentes valeurs de I, les points d'équilibres se déplacent sur la courbe, bien que les notions de stabilités/instabilités ne changent pas.
+Sur ce graphique on peut voir les différentes courbes de la vitesse d'accroissement pour différentes valeurs de $I$. On peut voir que les variations de $I$ augmentent la vitesse d'acroissement de manière constante, cela influt donc aussi sur les points d'équilibres du modèle, en effet on voit bien que pour différentes valeurs de I, les points d'équilibres se déplacent sur la courbe, bien que les notions de stabilités/instabilités ne changent pas.
 \paragraph{}
 On remarque que avec un $I$ assez grand, l'effet Allee n'éteint plus la population mais ralentit seulement sa croissance. En effet 2 points d'équilibres peuvent disparaïtre à partir d'une valeur de I assez grande. Il ne reste donc plus qu'un seul point d'équilibre pour n'importe quelle valeur de population, il correspond à la capacité de charge du modèle (elle ne dépend plus que de $K$ mais aussi de $I$).
 \newpage
@@ -53,6 +53,7 @@ On remarque que avec un $I$ assez grand, l'effet Allee n'éteint plus la populat
 \end{center}
 Paramètres de modélisation : $a=0.6$ ; $K=2$  ; $r=0.5$ ; $A=0.5$ ; $I$ varie de 0 à 1 avec un pas de 0.1
 \paragraph{}
+Sur ces courbes, on remarque bien que les variations de I, influent sur la capacité de charge du modèle, ainsi que la vitesse à laquelle il l'atteint.
 
 \subsubsection{Modèle avec variation de K}
 
@@ -62,6 +63,12 @@ Paramètres de modélisation : $a=0.6$ ; $K=2$  ; $r=0.5$ ; $A=0.5$ ; $I$ varie 
 \end{center}
 Paramètres de modélisation : $r=1$ ; $A=0.8$ ; $I=0.05$ ; $K$ varie de 1.5 à 2.5 avec un pas de 0.1
 \paragraph{}
+Sur ce graphique on remarque que les variations de $K$ ont le même effet que sur le modèle logistique avec effet Allee. Les variations de $K$ déterminent la capacité de charge du modèle ($I$ influt aussi dans la capacité de charge). On remarque juste que le premier point d'équilibre stable (celui vers $0.05$, on l'appellera E1) permet à la population de ne jamais completement s'éteindre mais de tendre vers cette valeur.
+On remarque donc que 2ème point d'équilibre (on l'appellera E2), celui instable vers $0.7$ est une valeur séparatrice des 2 bassins d'attractions :
+\begin{itemize}
+\item Lorsque la population initiale est inférieure à E2, la population va tendre vers l'équilibre stable E1,
+\item Lorsque la population initiale est supérieure à E2, la population va tendre ves sa capacité de charge.
+\end{itemize}
 
 \paragraph{Discrétisation du modèle}
 \begin{center}
