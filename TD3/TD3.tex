@@ -42,10 +42,9 @@
 \end{center}
 Paramètres de modélisation : $K=2$  ; $r=0.5$ ; $A=0.5$ ; $I$ varie de 0 à 1 avec un pas de 0.1 
 \paragraph{}
-Sur ce graphique on peut voir les différentes courbes de la vitesse d'accroissement pour différentes valeurs de I. On peut voir que les variations de $I$ permettent de 
+Sur ce graphique on peut voir les différentes courbes de la vitesse d'accroissement pour différentes valeurs de $I$. On peut voir que les variations de $I$ augmente la vitesse d'acroissement de manière constante, cela influt donc aussi sur les points d'équilibres du modèle, en effet on voit bien que pour différentes valeurs de I, les points d'équilibres se déplacent sur la courbe, bien que les notions de stabilités/instabilités ne changent pas.
 \paragraph{}
-On remarque que avec un $i$ assez grand, l'effet Allee n'éteint plus la population mais ralentit seulement sa croissance. En effet 2 points d'équilibres peuvent disparaïtre pour certaines valeurs de I. 
-
+On remarque que avec un $I$ assez grand, l'effet Allee n'éteint plus la population mais ralentit seulement sa croissance. En effet 2 points d'équilibres peuvent disparaïtre à partir d'une valeur de I assez grande. Il ne reste donc plus qu'un seul point d'équilibre pour n'importe quelle valeur de population, il correspond à la capacité de charge du modèle (elle ne dépend plus que de $K$ mais aussi de $I$).
 \newpage
 
 \paragraph{Discrétisation du modèle}
@@ -157,7 +156,7 @@ Paramètres de modélisation :  $r=1$ ; $A=0.5$ ; $K=2.5$ ; $B=0.5$ ; $C$ varie 
 \begin{center}
 \includegraphics[width=300px]{img/part2/TrajC.png}
 \end{center}
-Paramètres de modélisation :  $r=1$ ; $A=0.5$ ; $K=2.5$ ; $B=0.5$ ; $h=0.05$ ; $a=1$ ; $C$ varie de 0.2 à 0.4 avec un pas de 0.05
+Paramètres de modélisation :  $r=1$ ; $A=0.5$ ; $K=2.5$ ; $B=0.5$ ; $h=0.05$ ; $a=0.3$ ; $C$ varie de 0.2 à 0.4 avec un pas de 0.05
 \paragraph{}
 
 \subsection{Etude mathématique}
@@ -529,7 +528,7 @@ clf
 
 Cvect = 0.2:0.05:0.4; // variable qui varie
 // variables du modèles
-r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; h = 0.05 ; a = 1 ;
+r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; h = 0.05 ; a = 0.3 ;
 ndate = 0:h:20; // vecteur des instants
 
 function f = predation(x) // fonction qui calcule la vitesse d'accroissement
