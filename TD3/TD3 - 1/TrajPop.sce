@@ -1,8 +1,8 @@
 clear
 clf
 
-avect=0.5:0.1:1.5; // variable qui varie
-r = 0.25 ; K = 2 ; I=0.1 ; A = 0.5 ; h = 0.05 ; // variables du modèles + pas de temps
+avect=0.2:0.2:2.2; // variable qui varie
+r = 0.5 ; K = 2 ; I=0.05 ; A = 0.5 ; h = 0.05 ; // variables du modèles + pas de temps
 ndate = 0:h:20; // vecteur des instants où on calcule la solution
 
 function f = allee_img(x) // fonction qui calcule la vitesse d'accroissement

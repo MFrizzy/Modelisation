@@ -42,7 +42,9 @@
 \end{center}
 Paramètres de modélisation : $K=2$  ; $r=0.5$ ; $A=0.5$ ; $I$ varie de 0 à 1 avec un pas de 0.1 
 \paragraph{}
-Sur ce graphique on peut voir les différentes courbes de la vitesse d'accroissement pour différentes valeurs de I. On remarque que avec un $i$ assez grand, l'effet Allee n'éteint plus la population mais ralentit seulement sa croissance. En effet 2 points d'équilibres peuvent disparaïtre pour certaines valeurs de I.
+Sur ce graphique on peut voir les différentes courbes de la vitesse d'accroissement pour différentes valeurs de I. On peut voir que les variations de $I$ permettent de 
+\paragraph{}
+On remarque que avec un $i$ assez grand, l'effet Allee n'éteint plus la population mais ralentit seulement sa croissance. En effet 2 points d'équilibres peuvent disparaïtre pour certaines valeurs de I. 
 
 \newpage
 
@@ -91,7 +93,7 @@ Paramètres de modélisation : $a=0.7$ ; $I=0.1$ ; $K=2$ ; $r=1$  ; $A$ varie de
 \begin{center}
 \includegraphics[width=300px]{img/part1/TrajPop.png}
 \end{center}
-Paramètres de modélisation : $A=0.5$ ; $I=0.1$ ; $K=2$ ; $r=0.25$  ; $a$ varie de 0.5 à 1.5 avec un pas de 0.1
+Paramètres de modélisation : $A=0.5$ ; $I=0.1$ ; $K=2$ ; $r=0.5$  ; $a$ varie de 0.2 à 2.2 avec un pas de 0.2
 \paragraph{}
 
 \newpage
@@ -346,8 +348,8 @@ a.grid=[5,5];
 clear
 clf
 
-avect=0.5:0.1:1.5; // variable qui varie
-r = 0.25 ; K = 2 ; I=0.1 ; A = 0.5 ; h = 0.05 ; // variables du modèles + pas de temps
+avect=0.2:0.2:2.2; // variable qui varie
+r = 0.5 ; K = 2 ; I=0.05 ; A = 0.5 ; h = 0.05 ; // variables du modèles + pas de temps
 ndate = 0:h:20; // vecteur des instants où on calcule la solution
 
 function f = allee_img(x) // fonction qui calcule la vitesse d'accroissement
@@ -401,7 +403,7 @@ clear
 clf
 
 // variables du modèles
-r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; C=0.4 ; h = 0.05 ; I=0.2 ; a = 1;
+r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; C=0.4 ; h = 0.05 ; a = 1;
 ndate = 0:h:20; // vecteur des instants
 
 function f = predation(x) // fonction qui calcule la vitesse d'accroissement
@@ -461,7 +463,7 @@ clf
 
 Bvect = 0.3:0.1:0.7; // variable qui varie
 // variables du modèles
-r = 1 ; A = 0.5 ; K = 2.5 ; C=0.4 ; a = 1 ; h = 0.05 ; I=0.2 ;
+r = 1 ; A = 0.5 ; K = 2.5 ; C=0.4 ; a = 1 ; h = 0.05 ;
 ndate = 0:h:20; // vecteur des instants
 
 function f = predation(x) // fonction qui calcule la vitesse d'accroissement
@@ -497,7 +499,7 @@ clear
 clf
 
 // variables du modèles
-r = 1; A = 0.5; K = 2.5; B=0.5;
+r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ;
 Cvect = 0.2:0.05:0.4; // variable qui varie
 x = linspace(0, 2.5, 301);
 
@@ -527,7 +529,7 @@ clf
 
 Cvect = 0.2:0.05:0.4; // variable qui varie
 // variables du modèles
-r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; h = 0.05 ; I=0.2 ; a = 1 ;
+r = 1 ; A = 0.5 ; K = 2.5 ; B=0.5 ; h = 0.05 ; a = 1 ;
 ndate = 0:h:20; // vecteur des instants
 
 function f = predation(x) // fonction qui calcule la vitesse d'accroissement
