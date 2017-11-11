@@ -5,7 +5,7 @@ load('C:\Users\tangu\OneDrive\Documents\GitHub\Modelisation\TD4\NetworkData.sod'
 // Extraction des temps inter-arrivées
 t_ia = data(2:$, 2) - data(1:$-1, 2);
 
-index_bool = ( data(:, 3) = 3 )
+index_bool = ( data(:, 3) = 1 )
 tab = data(index_bool, :)
 t_ia = tab(2:$,2) - tab(1:$-1,2);
 
