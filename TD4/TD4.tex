@@ -8,7 +8,8 @@
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{Tkz-Tab}
 \usepackage{wrapfig}
-\usepackage{Verbatim}
+\usepackage{verbatim}
+\usepackage{array}
 
 \begin{document}
 
@@ -35,6 +36,23 @@
 \section{Etude statistique des temps interarrivés pour tous les serveurs}
 
 \subsection{Indicateurs de position et de dispersion}
+
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  Indicateurs & Serveur 1 & Serveur 2 & Serveur 3 \\
+  \hline
+  Minimum & 0.01 & 0.04 & 0.01 \\
+  Maximum & 134 & 88.9 & 68.6 \\
+  Etendue & 134 & 88.9 & 68.6 \\
+  Moyenne & 15.5 & 10.6 & 6.27 \\
+  Médiane & 11.5 & 6.82 & 4.35 \\
+  Q1 & 5.05 & 3.29 & 1.75 \\
+  Q3 & 21.9 & 13.9 & 8.36 \\
+  IQ & 16.8 & 10.6 & 6.61 \\
+  Ecart-Type & 15 & 11.3 & 6.85 \\
+  Variance & 225 & 127 & 46.9 \\
+  \hline
+\end{tabular}
 
 \subsection{Fonction de répartition}
 
