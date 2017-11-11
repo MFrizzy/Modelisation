@@ -7,11 +7,17 @@ t_ia = data(2:$, 2) - data(1:1237, 2);
 tab = tabul(t_ia, 'i'); // construction du tableau des effectifs
 tab(:,2) = tab(:,2)/length(t_ia); // calcul des fréquences
 F = cumsum(tab(:,2)); // calcul des fréquences cumulées
+//plot2d2(tab(:,1),F)
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+
+
 
 extremes = [min(t_ia), max(t_ia)] // calcul du min et du max
-
 moyenne = mean(t_ia)  // calcul de la moyenne
-
 mediane = perctl(t_ia,50) // calcul de la mediane
 
 // calcul de la variance et de l'écart-type
@@ -29,7 +35,7 @@ Q3 = perctl(t_ia, 75) // troisième quartile
 IQ = Q3(1) - Q1(1) // intervalle interquartile :
 
 // Calcul de la fonction histogramme
-C = linspace(0, extremes(2), 11)
+C = linspace(min(t_ia), max(t_ia), 11)
 
 
 //useless
@@ -45,9 +51,10 @@ for i=2:10
 end
 ClassesDeciles(1)=extremes(1)
 ClassesDeciles(11)=extremes(2)
-histplot(ClassesDeciles,t_ia,style=2,fill='true')
+histplot(ClassesDeciles,t_ia,style=2)
+legend("Histogramme d isofréquences des temps-interarrivés")
 hist=histc(C,t_ia)
-//histplot(C, t_ia, style=2,)
+//histplot(C, t_ia, style=2)
 
 
 //dessin loi exponentielle
@@ -55,10 +62,5 @@ a=0:0.01:22
 lambda=1/moyenne
 b=lambda*exp(-lambda*a)
 plot2d2(a,b)
-
-// Définition des paramètres d'affichages
-a=gca();
-a.x_location = "origin";
-a.grid=[5,5];
 
 
