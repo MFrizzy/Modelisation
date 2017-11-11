@@ -2,11 +2,10 @@ clf;
 clear;
 clc;
 load('C:\Users\tangu\OneDrive\Documents\GitHub\Modelisation\TD4\NetworkData.sod')
-
 // Extraction des temps inter-arrivées
 t_ia = data(2:$, 2) - data(1:$-1, 2);
 
-index_bool = ( data(:, 3) = 1 )
+index_bool = ( data(:, 3) = 3 )
 tab = data(index_bool, :)
 t_ia = tab(2:$,2) - tab(1:$-1,2);
 
@@ -33,3 +32,4 @@ m=mean(t_ia)
 v=stdev(t_ia)
 b=(1/(v*sqrt(2*%pi))*exp((-1/2)*((a-m)/v)^2))
 plot2d2(a,b)
+// grand(100,1,"nor",mean(t_ia),stdev(t_ia))

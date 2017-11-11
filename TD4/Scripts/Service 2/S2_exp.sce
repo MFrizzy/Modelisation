@@ -2,11 +2,10 @@ clf;
 clear;
 clc;
 load('C:\Users\tangu\OneDrive\Documents\GitHub\Modelisation\TD4\NetworkData.sod')
-
 // Extraction des temps inter-arrivées
 t_ia = data(2:$, 2) - data(1:$-1, 2);
 
-index_bool = ( data(:, 3) = 1 )
+index_bool = ( data(:, 3) = 2 )
 tab = data(index_bool, :)
 t_ia = tab(2:$,2) - tab(1:$-1,2);
 
@@ -27,9 +26,8 @@ a=gca();
 a.x_location = "origin";
 a.grid=[5,5];
 
-//dessin loi normale
-a=0:0.01:30
-m=mean(t_ia)
-v=stdev(t_ia)
-b=(1/(v*sqrt(2*%pi))*exp((-1/2)*((a-m)/v)^2))
+//dessin loi exponentielle
+a=0:0.1:22
+lambda=1/mean(t_ia)
+b=lambda*exp(-lambda*a)
 plot2d2(a,b)

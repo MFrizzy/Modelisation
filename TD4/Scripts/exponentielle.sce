@@ -16,7 +16,7 @@ ClassesDeciles(11)=max(t_ia)
 histplot(ClassesDeciles,t_ia,style=2,fill='true')
 
 //dessin loi exponentielle
-a=0:0.1:22
+a=0:0.01:22
 lambda=1/mean(t_ia)
 b=lambda*exp(-lambda*a)
 plot2d2(a,b)

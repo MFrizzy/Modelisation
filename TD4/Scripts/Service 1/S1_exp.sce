@@ -27,9 +27,8 @@ a=gca();
 a.x_location = "origin";
 a.grid=[5,5];
 
-//dessin loi normale
+//dessin loi exponentielle
 a=0:0.01:30
-m=mean(t_ia)
-v=stdev(t_ia)
-b=(1/(v*sqrt(2*%pi))*exp((-1/2)*((a-m)/v)^2))
+lambda=1/mean(t_ia)
+b=lambda*exp(-lambda*a)
 plot2d2(a,b)
