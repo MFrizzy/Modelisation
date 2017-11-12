@@ -157,12 +157,6 @@ Q1 & Q2 & Interquartile \\
 \end{center}
 \paragraph{}
 
-\paragraph{Histogramme}
-\begin{center}
-%\includegraphics[width=300px]{img/part1/AlleeI.png}
-\end{center}
-\paragraph{}
-
 \part{Ajustement graphique à des lois mathématiques}
 
 \section{Estimation des paramètres}
@@ -193,11 +187,15 @@ On en déduit déjà que pour qu'une la moyenne doit être égale à l'écart ty
 
 \subsection{Superposition des fonctions de répartition}
 \begin{center}
-%\includegraphics[width=300px]{img/S1_repartitions.png}
+\includegraphics[width=300px]{img/repartitions.png}
 \end{center}
 \paragraph{}
 
 \subsection{Superposition des fonctions de densité et de l'histogramme}
+\begin{center}
+\includegraphics[width=300px]{img/densite.png}
+\end{center}
+\paragraph{}
 
 \section{Serveur 1}
 
@@ -525,6 +523,83 @@ a.grid=[5,5];
 \section{Ajustement graphique à des lois mathématiques}
 
 \subsection{Tous les serveurs}
+
+\subsubsection{Superposition des fonctions de répartitions}
+\begin{verbatim}
+// Extraction des temps inter-arrivées
+t_ia = data(2:$, 2) - data(1:1237, 2);
+
+tab = tabul(t_ia, 'i'); // construction du tableau des effectifs
+tab(:,2) = tab(:,2)/length(t_ia); // calcul des fréquences
+F = cumsum(tab(:,2)); // calcul des fréquences cumulées
+plot2d2(tab(:,1),F)
+legend("Fonction de répartitions des temps interarrivés")
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+
+// Répartition loi normale
+a=min(t_ia):0.01:max(t_ia)
+m=ones(a)*mean(t_ia)
+s=ones(a)*stdev(t_ia)
+[P,Q]=cdfnor("PQ",a,m,s)
+plot2d2(a,P,style=2)
+
+// Repartition loi exponentielle
+lambda=1/mean(t_ia)
+b=1-exp(-lambda*a)
+plot2d2(a,b,style=3)
+
+// Repartition loi uniforme
+c=(a-min(t_ia))/(max(t_ia)-min(t_ia))
+plot2d2(a,c,style=4)
+
+legend("Courbe de la fonction de répartition empirique","Courbe de la fonction 
+de répartition de la loi normale","Courbe de la fonction de répartition de la 
+exponentielle","Courbe de la fonction de répartition la loi uniforme")
+\end{verbatim}
+
+\subsubsection{Superposition des fonctions de densité et de l'histogramme}
+\begin{verbatim}
+// Extraction des temps inter-arrivées
+t_ia = data(2:$, 2) - data(1:1237, 2);
+
+// Histogramme
+deciles=perctl(t_ia,10:10:90);
+for i=2:10
+    ClassesDeciles(i)=deciles(i-1)
+end
+ClassesDeciles(1)=min(t_ia)
+ClassesDeciles(11)=max(t_ia)
+histplot(ClassesDeciles,t_ia,style=2)
+
+// Densité de la loi normale
+a=min(t_ia):0.01:max(t_ia)
+m=mean(t_ia)
+v=stdev(t_ia)
+b=(1/(v*sqrt(2*%pi))*exp((-1/2)*((a-m)/v)^2))
+plot2d2(a,b,style=1)
+
+// Densité de la loi exponentielle
+lambda=1/mean(t_ia)
+b=lambda*exp(-lambda*a)
+plot2d2(a,b,style=3)
+
+// Densité de la loi uniforme
+h=1/(max(t_ia)-min(t_ia))
+b=ones(a)*h
+plot2d2(a,b,style=20)
+
+legend("Histogramme d isofréquence des temps interarrivés","Densité de la loi 
+normale","Densité de la loi exponentielle","Densité de la loi uniforme")
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+\end{verbatim}
 
 \subsection{Serveur 1}
 
