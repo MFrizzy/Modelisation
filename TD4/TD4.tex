@@ -75,7 +75,7 @@ Q1 & Q2 & Interquartile \\
 
 \subsection{Fonction de répartition}
 \begin{center}
-\includegraphics[width=450px]{img/repart.png}
+\includegraphics[width=425px]{img/repart.png}
 \end{center}
 \paragraph{}
 
@@ -83,13 +83,13 @@ Q1 & Q2 & Interquartile \\
 
 \subsubsection{Histogramme avec classes isoamplitudes}
 \begin{center}
-\includegraphics[width=450px]{img/H_isoa.png}
+\includegraphics[width=425px]{img/H_isoa.png}
 \end{center}
 \paragraph{}
 
 \subsubsection{Histogramme avec classes isofréquences}
 \begin{center}
-\includegraphics[width=450px]{img/H_isof.png}
+\includegraphics[width=425px]{img/H_isof.png}
 \end{center}
 \paragraph{}
 
@@ -104,17 +104,38 @@ Q1 & Q2 & Interquartile \\
   Minimum & 0.01 & 0.04 & 0.01 \\
   Maximum & 134 & 88.9 & 68.6 \\
   Etendue & 134 & 88.8 & 68.6 \\
+  \hline
   Moyenne & 15.5 & 10.6 & 6.27 \\
   Médiane & 11.5 & 6.82 & 4.35 \\
+  \hline
   Q1 & 5.05 & 3.29 & 1.75 \\
   Q3 & 21.9 & 13.9 & 8.36 \\
   IQ & 16.8 & 10.6 & 6.61 \\
+  \hline
   Ecart-Type & 15 & 11.3 & 6.85 \\
   Variance & 225 & 127 & 46.9 \\
   \hline
 \end{tabular}
 
 \section{Fonctions de répartition}
+
+\subsection{Serveur 1}
+\begin{center}
+\includegraphics[width=425px]{img/S1_repart.png}
+\end{center}
+\paragraph{}
+
+\subsection{Serveur 2}
+\begin{center}
+\includegraphics[width=425px]{img/S2_repart.png}
+\end{center}
+\paragraph{}
+
+\subsection{Serveur 3}
+\begin{center}
+\includegraphics[width=425px]{img/S3_repart.png}
+\end{center}
+\paragraph{}
 
 \section{Histogrammes}
 
@@ -124,87 +145,71 @@ Q1 & Q2 & Interquartile \\
 \end{center}
 \paragraph{}
 
-\part{Ajustement graphique à des lois mathématique}
+\part{Ajustement graphique à des lois mathématiques}
+
+\section{Estimation des paramètres}
+
+\subsection{Loi normale}
+\paragraph{}
+La loi normale $X \sim N(\mu,\sigma)$ s'exprime en fonction de l'esperance $\mu$ ainsi que de l'écart-type $\sigma$. On associe donc l'espérance à la moyenne des temps d'attentes/temps interarrivés.
+
+\subsection{Loi uniforme}
+\paragraph{}
+La loi uniforme dépend de 2 paramètres : $a$ et $b$ qui correspondant à l'intervalle $[a,b]$ sur laquelle est définie la loi uniforme. On associe donc $a$ au minimum et $b$ au maximum des temps d'attentes/temps interarrivés.
+
+\subsection{Loi exponentielle}
+\paragraph{}
+La loi exponentielle dépend d'un seul paramètre : $\lambda$.
+Or on sait que pour une loi exponentielle $X$ :
+\begin{align}
+E(X) & =\frac{1}{\lambda} \\
+V(X) & =\frac{1}{\lambda^2}
+\intertext{Donc}
+\lambda & =\frac{1}{E(X)} \\
+\lambda & =\frac{1}{\sqrt{V(X)}} \\
+&= \frac{1}{\sigma}
+\end{align}
+On en déduit déjà que pour qu'une la moyenne doit être égale à l'écart type pour que les temps de services soient les réalisations d'une loi exponentielle.
 
 \section{Tous les serveurs}
 
-\subsection{Ajustement à la loi uniforme}
+\subsection{Superposition des fonctions de répartition}
+\begin{center}
+%\includegraphics[width=300px]{img/S1_repartitions.png}
+\end{center}
+\paragraph{}
 
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
-
-\subsection{Ajustement à la loi normale}
-
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
-
-\subsection {Ajustement à la loi exponentielle}
-
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
+\subsection{Superposition des fonctions de densité et de l'histogramme}
 
 \section{Serveur 1}
 
-\subsection{Ajustement à la loi uniforme}
+\subsection{Superposition des fonctions de répartition}
+\begin{center}
+\includegraphics[width=300px]{img/S1_repartitions.png}
+\end{center}
+\paragraph{}
 
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
-
-\subsection{Ajustement à la loi normale}
-
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
-
-\subsection {Ajustement à la loi exponentielle}
-
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
+\subsection{Superposition des fonctions de densité et de l'histogramme}
 
 \section{Serveur 2}
 
-\subsection{Ajustement à la loi uniforme}
+\subsection{Superposition des fonctions de répartition}
+\begin{center}
+\includegraphics[width=300px]{img/S2_repartitions.png}
+\end{center}
+\paragraph{}
 
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
-
-\subsection{Ajustement à la loi normale}
-
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
-
-\subsection {Ajustement à la loi exponentielle}
-
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
+\subsection{Superposition des fonctions de densité et de l'histogramme}
 
 \section{Serveur 3}
 
-\subsection{Ajustement à la loi uniforme}
+\subsection{Superposition des fonctions de répartition}
+\begin{center}
+\includegraphics[width=300px]{img/S3_repartitions.png}
+\end{center}
+\paragraph{}
 
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
-
-\subsection{Ajustement à la loi normale}
-
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
-
-\subsection {Ajustement à la loi exponentielle}
-
-\subsubsection{Estimation des paramètres}
-\subsubsection{Superposition de la fonction de répartition}
-\subsubsection{Superposition de la fonction de densité et de l'histogramme}
+\subsection{Superposition des fonctions de densité et de l'histogramme}
 
 \newpage
 \appendix
@@ -350,6 +355,219 @@ Q1S3 = perctl(t_s3, 25) // premier quartile
 Q3S3 = perctl(t_s3, 75) // troisième quartile
 IQS3 = Q3S3(1) - Q1S3(1) // intervalle interquartile
 \end{verbatim}
+
+\subsection{Fonctions de repartitions}
+
+\subsubsection{Serveur 1}
+\begin{verbatim}
+// Extraction des temps de service
+
+index_bool = ( data(:, 3) == 1 )
+tabS1 = data(index_bool, :)
+t_s1 = tabS1(1:$,4);
+
+tab = tabul(t_s1,'i')
+tab(:,2) = tab(:,2)/length(t_s1)
+F = cumsum(tab(:,2))
+
+plot2d2(tab(:,1),F)
+legend("Fonction de répartitions des temps de service")
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+\end{verbatim}
+
+\subsubsection{Serveur 2}
+\begin{verbatim}
+// Extraction des temps de service
+
+index_bool = ( data(:, 3) == 2 )
+tabS1 = data(index_bool, :)
+t_s1 = tabS1(1:$,4);
+
+tab = tabul(t_s1,'i')
+tab(:,2) = tab(:,2)/length(t_s1)
+F = cumsum(tab(:,2))
+
+plot2d2(tab(:,1),F)
+legend("Fonction de répartitions des temps de service")
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+\end{verbatim}
+
+\subsubsection{Serveur 3}
+\begin{verbatim}
+// Extraction des temps de service
+
+index_bool = ( data(:, 3) == 3 )
+tabS1 = data(index_bool, :)
+t_s1 = tabS1(1:$,4);
+
+tab = tabul(t_s1,'i')
+tab(:,2) = tab(:,2)/length(t_s1)
+F = cumsum(tab(:,2))
+
+plot2d2(tab(:,1),F)
+legend("Fonction de répartitions des temps de service")
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+\end{verbatim}
+
+\section{Ajustement graphique à des lois mathématiques}
+
+\subsection{Tous les serveurs}
+
+\subsection{Serveur 1}
+
+\subsubsection{Superposition des fonctions de répartitions}
+\begin{verbatim}
+// Extraction des temps de service
+
+index_bool = ( data(:, 3) == 1 )
+tabS1 = data(index_bool, :)
+t_s1 = tabS1(1:$,4);
+
+// Repartition empirique
+tab = tabul(t_s1,'i')
+tab(:,2) = tab(:,2)/length(t_s1)
+F = cumsum(tab(:,2))
+
+plot2d2(tab(:,1),F)
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+
+// Répartition loi normale
+a=min(t_s1):0.01:max(t_s1)
+m=ones(a)*mean(t_s1)
+s=ones(a)*stdev(t_s1)
+[P,Q]=cdfnor("PQ",a,m,s)
+plot2d2(a,P,style=2)
+
+// Repartition loi exponentielle
+lambda=1/mean(t_s1)
+b=1-exp(-lambda*a)
+plot2d2(a,b,style=3)
+
+// Repartition loi uniforme
+c=(a-min(t_s1))/(max(t_s1)-min(t_s1))
+plot2d2(a,c,style=4)
+
+legend("Courbe de la fonction de répartition empirique","Courbe de la fonction
+de répartition de la loi normale","Courbe de la fonction de répartition de la 
+exponentielle","Courbe de la fonction de répartition la loi uniforme")
+\end{verbatim}
+
+\subsubsection{Superposition des fonctions de densité et de l'histogramme}
+\begin{verbatim}
+\end{verbatim}
+
+\subsection{Serveur 2}
+
+\subsubsection{Superposition des fonctions de répartitions}
+\begin{verbatim}
+// Extraction des temps de service
+
+index_bool = ( data(:, 3) == 2 )
+tabS2 = data(index_bool, :)
+t_s2 = tabS2(1:$,4);
+
+// Repartition empirique
+tab = tabul(t_s2,'i')
+tab(:,2) = tab(:,2)/length(t_s2)
+F = cumsum(tab(:,2))
+
+plot2d2(tab(:,1),F)
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+
+// Répartition loi normale
+a=min(t_s2):0.01:max(t_s2)
+m=ones(a)*mean(t_s2)
+s=ones(a)*stdev(t_s2)
+[P,Q]=cdfnor("PQ",a,m,s)
+plot2d2(a,P,style=2)
+
+// Repartition loi exponentielle
+lambda=1/mean(t_s2)
+b=1-exp(-lambda*a)
+plot2d2(a,b,style=3)
+
+// Repartition loi uniforme
+c=(a-min(t_s2))/(max(t_s2)-min(t_s2))
+plot2d2(a,c,style=4)
+
+legend("Courbe de la fonction de répartition empirique","Courbe de la fonction 
+de répartition de la loi normale","Courbe de la fonction de répartition de la 
+exponentielle","Courbe de la fonction de répartition la loi uniforme")
+\end{verbatim}
+
+\subsubsection{Superposition des fonctions de densité et de l'histogramme}
+\begin{verbatim}
+\end{verbatim}
+
+\subsection{Serveur 3}
+
+\subsubsection{Superposition des fonctions de répartitions}
+\begin{verbatim}
+// Extraction des temps de service
+
+index_bool = ( data(:, 3) == 3 )
+tabS3 = data(index_bool, :)
+t_s3 = tabS3(1:$,4);
+
+// Repartition empirique
+tab = tabul(t_s3,'i')
+tab(:,2) = tab(:,2)/length(t_s3)
+F = cumsum(tab(:,2))
+
+plot2d2(tab(:,1),F)
+
+// Définition des paramètres d'affichages
+a=gca();
+a.x_location = "origin";
+a.grid=[5,5];
+
+// Répartition loi normale
+a=min(t_s3):0.01:max(t_s3)
+m=ones(a)*mean(t_s3)
+s=ones(a)*stdev(t_s3)
+[P,Q]=cdfnor("PQ",a,m,s)
+plot2d2(a,P,style=2)
+
+// Repartition loi exponentielle
+lambda=1/mean(t_s3)
+b=1-exp(-lambda*a)
+plot2d2(a,b,style=3)
+
+// Repartition loi uniforme
+c=(a-min(t_s3))/(max(t_s3)-min(t_s3))
+plot2d2(a,c,style=4)
+
+legend("Courbe de la fonction de répartition empirique","Courbe de la fonction 
+de répartition de la loi normale","Courbe de la fonction de répartition de la 
+exponentielle","Courbe de la fonction de répartition la loi uniforme")
+\end{verbatim}
+
+\subsubsection{Superposition des fonctions de densité et de l'histogramme}
+\begin{verbatim}
+\end{verbatim}
+
+
+%----------------------------------
 
 \begin{verbatim}
 \end{verbatim}

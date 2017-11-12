@@ -5,7 +5,7 @@ load('C:\Users\tangu\OneDrive\Documents\GitHub\Modelisation\TD4\NetworkData.sod'
 
 // Extraction des temps de service
 
-index_bool = ( data(:, 3) == 1 )
+index_bool = ( data(:, 3) == 2 )
 tabS1 = data(index_bool, :)
 t_s1 = tabS1(1:$,4);
 

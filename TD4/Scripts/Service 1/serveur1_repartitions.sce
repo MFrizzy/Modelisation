@@ -9,6 +9,7 @@ index_bool = ( data(:, 3) == 1 )
 tabS1 = data(index_bool, :)
 t_s1 = tabS1(1:$,4);
 
+// Repartition empirique
 tab = tabul(t_s1,'i')
 tab(:,2) = tab(:,2)/length(t_s1)
 F = cumsum(tab(:,2))
@@ -35,3 +36,5 @@ plot2d2(a,b,style=3)
 // Repartition loi uniforme
 c=(a-min(t_s1))/(max(t_s1)-min(t_s1))
 plot2d2(a,c,style=4)
+
+legend("Courbe de la fonction de répartition empirique","Courbe de la fonction de répartition de la loi normale","Courbe de la fonction de répartition de la exponentielle","Courbe de la fonction de répartition la loi uniforme")

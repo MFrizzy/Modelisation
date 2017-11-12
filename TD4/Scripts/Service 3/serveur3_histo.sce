@@ -5,16 +5,21 @@ load('C:\Users\tangu\OneDrive\Documents\GitHub\Modelisation\TD4\NetworkData.sod'
 
 // Extraction des temps de service
 
-index_bool = ( data(:, 3) == 1 )
+index_bool = ( data(:, 3) == 3 )
 tabS1 = data(index_bool, :)
 t_s1 = tabS1(1:$,4);
 
-tab = tabul(t_s1,'i')
-tab(:,2) = tab(:,2)/length(t_s1)
-F = cumsum(tab(:,2))
+deciles=perctl(t_s1,10:10:90);
+for i=2:10
+    ClassesDeciles(i)=deciles(i-1)
+end
+ClassesDeciles(1)=min(t_s1)
+ClassesDeciles(11)=max(t_s1)
 
-plot2d2(tab(:,1),F)
-legend("Fonction de répartitions des temps de service")
+C = linspace(0, max(t_s1), 11)
+
+//histplot(C,t_ia,style=2)
+histplot(ClassesDeciles,t_s1,style=2)
 
 // Définition des paramètres d'affichages
 a=gca();

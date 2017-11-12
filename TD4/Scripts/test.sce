@@ -51,11 +51,11 @@ for i=2:10
 end
 ClassesDeciles(1)=extremes(1)
 ClassesDeciles(11)=extremes(2)
-histplot(ClassesDeciles,t_ia,style=2)
-legend("Histogramme d isofréquences des temps-interarrivés")
+//histplot(ClassesDeciles,t_ia,style=2)
+//legend("Histogramme d isofréquences des temps-interarrivés")
 hist=histc(C,t_ia)
-//histplot(C, t_ia, style=2)
-
+histplot(C, t_ia, style=2)
+legend("Histogramme d isoamplitude des temps-interarrivés")
 
 //dessin loi exponentielle
 a=0:0.01:22
