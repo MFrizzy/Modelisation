@@ -78,6 +78,7 @@ Q1 & Q2 & Interquartile \\
 \includegraphics[width=425px]{img/repart.png}
 \end{center}
 \paragraph{}
+Ce graphique nous montre que la moitié des temps inter-arrivées sont inférieurs ou égaux à 2 secondes.
 
 \subsection{Histogramme}
 
@@ -86,12 +87,16 @@ Q1 & Q2 & Interquartile \\
 \includegraphics[width=425px]{img/H_isoa.png}
 \end{center}
 \paragraph{}
+Cet histogramme indique la concentration des données au sein des différentes classes de même amplitudes. 
+On remarque à l’aide de cet histogramme que les valeurs sont principalement concentrées dans la première classe, qui regroupe les temps d'inter-arrivées de 0 à 2,15 secondes. Ensuite la concentration des valeurs est divisée d’environ par deux pour chacunes des classes suivantes.
 
 \subsubsection{Histogramme avec classes isofréquences}
 \begin{center}
 \includegraphics[width=425px]{img/H_isof.png}
 \end{center}
 \paragraph{}
+Cet histogramme indique la concentration des données au sein des différentes classes de même fréquence.
+Nous visualisons rapidement la zone creuse lorsque les temps d’inter-arrivées dépassent les 6,30secondes.
 
 \part{Etude statistique des temps de service}
 
@@ -124,18 +129,21 @@ Q1 & Q2 & Interquartile \\
 \includegraphics[width=425px]{img/S1_repart.png}
 \end{center}
 \paragraph{}
+Ce graphique nous montre que la moitié des temps inter-arrivées au serveur 1 sont inférieurs ou égaux à 12 secondes.
 
 \subsection{Serveur 2}
 \begin{center}
 \includegraphics[width=425px]{img/S2_repart.png}
 \end{center}
 \paragraph{}
+Ce graphique nous montre que la moitié des temps inter-arrivées au serveur 2 sont inférieurs ou égaux à 7 secondes.
 
 \subsection{Serveur 3}
 \begin{center}
 \includegraphics[width=425px]{img/S3_repart.png}
 \end{center}
 \paragraph{}
+Ce graphique nous montre que la moitié des temps inter-arrivées au serveur 3 sont inférieurs ou égaux à 4,3 secondes.
 
 \section{Histogrammes}
 
@@ -144,18 +152,21 @@ Q1 & Q2 & Interquartile \\
 \includegraphics[width=425px]{img/S1_histo.png}
 \end{center}
 \paragraph{}
+La zone creuse est présente pour les temps d’inter-arrivées supérieurs ou égaux à 34 secondes.
 
 \subsection{Serveur 2}
 \begin{center}
 \includegraphics[width=425px]{img/S2_histo.png}
 \end{center}
 \paragraph{}
+La zone creuse est présente pour les temps d’inter-arrivées supérieurs ou égaux à 24 secondes.
 
 \subsection{Serveur 3}
 \begin{center}
 \includegraphics[width=425px]{img/S3_histo.png}
 \end{center}
 \paragraph{}
+La zone creuse est présente pour les temps d’inter-arrivées supérieurs ou égaux à 15 secondes.
 
 \part{Ajustement graphique à des lois mathématiques}
 
@@ -190,12 +201,36 @@ On en déduit déjà que pour qu'une la moyenne doit être égale à l'écart ty
 \includegraphics[width=300px]{img/repartitions.png}
 \end{center}
 \paragraph{}
+Les courbes des fonctions de répartition de la loi uniforme et de la loi normale ne correspondent pas à celle des serveurs car l’une se comporte comme une droite et l’autre ne démarre pas avec sa vitesse d’accroissement maximale.
+Les courbes des fonctions de répartition empirique et de la loi exponentielle se superposent et ressemblent fortement à la fonction de répartition des serveurs.
+
 
 \subsection{Superposition des fonctions de densité et de l'histogramme}
 \begin{center}
 \includegraphics[width=300px]{img/densite.png}
 \end{center}
 \paragraph{}
+Une loi uniforme a une étendue proche de 0 or on remarque que l’étendu des temps de services est largement supérieure à 0. On en conclut donc l’on ne peut modéliser les temps de services par une loi uniforme. On remarque aussi que la courbe de la loi normale n’est pas du tout proche de l’histogramme des temps de service, par contre la courbe de la fonction de densité de la loi exponentielle s’approche de la forme de l’histogramme. De plus on remarque que la moyenne est presque égale à son écart-type, ce qui est une des caractéristiques de la loi exponentielle.
+
+\subsection{Propriété d'absense de mémoire}
+\begin{center}
+\includegraphics[width=300px]{img/S1_mem.png}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  Indicateurs & Moyenne & Mediane & Variance & Ecart-type & Etendue \\
+  \hline
+  Temps interarrivés & 2.9 & 1.95 & 8.73 & 2.95 & 22 \\
+  Temps interarrivés après 1s & 2.92 & 2.06 & 8.79 & 2.96 & 21 \\
+  Différence & 0.01 & 0.11 & 0.05 & 0.01 & 1 \\
+  \hline
+\end{tabular}
+\end{center}
+
+\paragraph{}
+Nous remarquons aisément que ces deux histogrammes sont similaires, ce qui signifie que la différence entre les temps de services et les temps de services-1 seconde est proche de 0. Donc on en déduit qu’il y a une absence de mémoire.
 
 \section{Serveur 1}
 
@@ -204,18 +239,19 @@ On en déduit déjà que pour qu'une la moyenne doit être égale à l'écart ty
 \includegraphics[width=300px]{img/S1_repartitions.png}
 \end{center}
 \paragraph{}
+On remarque que la fonction de répartition de la loi exponentielle est celle qui correspond le plus pour représenter la répartition empirique des temps de service.
 
 \subsection{Superposition des fonctions de densité et de l'histogramme}
 \begin{center}
 \includegraphics[width=300px]{img/S1_densite.png}
 \end{center}
 \paragraph{}
+Une loi uniforme a une étendue proche de 0 or on remarque que l’étendu des temps de services est largement supérieure à 0. On en conclut donc l’on ne peut modéliser les temps de services par une loi uniforme. On remarque aussi que la courbe de la loi normale n’est pas du tout proche de l’histogramme des temps de service, par contre la courbe de la fonction de densité de la loi exponentielle s’approche de la forme de l’histogramme. De plus on remarque que la moyenne est presque égale à son écart-type, ce qui est une des caractéristiques de la loi exponentielle.
 
-\subsection{Propriété d'abscense de mémoire}
+\subsection{Propriété d'absense de mémoire}
 \begin{center}
 \includegraphics[width=300px]{img/S1_mem.png}
 \end{center}
-\paragraph{}
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -229,6 +265,9 @@ On en déduit déjà que pour qu'une la moyenne doit être égale à l'écart ty
 \end{tabular}
 \end{center}
 
+\paragraph{}
+Nous remarquons aisément que ces deux histogrammes sont similaires, ce qui signifie que la différence entre les temps de services et les temps de services-1 seconde est proche de 0. Donc on en déduit qu’il y a une absence de mémoire.
+
 \section{Serveur 2}
 
 \subsection{Superposition des fonctions de répartition}
@@ -236,18 +275,19 @@ On en déduit déjà que pour qu'une la moyenne doit être égale à l'écart ty
 \includegraphics[width=300px]{img/S2_repartitions.png}
 \end{center}
 \paragraph{}
+On remarque que la fonction de répartition de la loi exponentielle est celle qui correspond le plus pour représenter la répartition empirique des temps de service.
 
 \subsection{Superposition des fonctions de densité et de l'histogramme}
 \begin{center}
 \includegraphics[width=300px]{img/S2_densite.png}
 \end{center}
 \paragraph{}
+Une loi uniforme a une étendue proche de 0 or on remarque que l’étendu des temps de services est largement supérieure à 0. On en conclut donc l’on ne peut modéliser les temps de services par une loi uniforme. On remarque aussi que la courbe de la loi normale n’est pas du tout proche de l’histogramme des temps de service, par contre la courbe de la fonction de densité de la loi exponentielle s’approche de la forme de l’histogramme. De plus on remarque que la moyenne est presque égale à son écart-type, ce qui est une des caractéristiques de la loi exponentielle.
 
-\subsection{Propriété d'abscense de mémoire}
+\subsection{Propriété d'absense de mémoire}
 \begin{center}
 \includegraphics[width=300px]{img/S2_mem.png}
 \end{center}
-\paragraph{}
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -261,6 +301,9 @@ On en déduit déjà que pour qu'une la moyenne doit être égale à l'écart ty
 \end{tabular}
 \end{center}
 
+\paragraph{}
+Nous remarquons aisément que ces deux histogrammes sont similaires, ce qui signifie que la différence entre les temps de services et les temps de services-1 seconde est proche de 0. Donc on en déduit qu’il y a une absence de mémoire.
+
 \section{Serveur 3}
 
 \subsection{Superposition des fonctions de répartition}
@@ -268,18 +311,19 @@ On en déduit déjà que pour qu'une la moyenne doit être égale à l'écart ty
 \includegraphics[width=300px]{img/S3_repartitions.png}
 \end{center}
 \paragraph{}
+On remarque que la fonction de répartition de la loi exponentielle est celle qui correspond le plus pour représenter la répartition empirique des temps de service.
 
 \subsection{Superposition des fonctions de densité et de l'histogramme}
 \begin{center}
 \includegraphics[width=300px]{img/S3_densite.png}
 \end{center}
 \paragraph{}
+Une loi uniforme a une étendue proche de 0 or on remarque que l’étendu des temps de services est largement supérieure à 0. On en conclut donc l’on ne peut modéliser les temps de services par une loi uniforme. On remarque aussi que la courbe de la loi normale n’est pas du tout proche de l’histogramme des temps de service, par contre la courbe de la fonction de densité de la loi exponentielle s’approche de la forme de l’histogramme. De plus on remarque que la moyenne est presque égale à son écart-type, ce qui est une des caractéristiques de la loi exponentielle.
 
-\subsection{Propriété d'abscense de mémoire}
+\subsection{Propriété d'absense de mémoire}
 \begin{center}
 \includegraphics[width=300px]{img/S3_mem.png}
 \end{center}
-\paragraph{}
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -292,6 +336,18 @@ On en déduit déjà que pour qu'une la moyenne doit être égale à l'écart ty
   \hline
 \end{tabular}
 \end{center}
+
+\paragraph{}
+Nous remarquons aisément que ces deux histogrammes sont similaires, ce qui signifie que la différence entre les temps de services et les temps de services-1 seconde est proche de 0. Donc on en déduit qu’il y a une absence de mémoire.
+
+\part{Conclusion}
+
+\paragraph{}
+A partir de l’étude des données fournies et grâce aux comparaisons avec des lois connues, nous avons pu déterminer que la loi exponentielle, de paramètre unique ($\lambda = \frac{1}{moyenne}$)  était celle qui se rapprochait le plus de ce qu’il se passe en réalité dans les serveurs, et donc qu’elle est la plus adaptée pour des simulations. En effet, lorsqu’on compare la fonction de répartition de la loi exponentielle à celles empiriques, et lorsqu’on compare la densité de la loi exponentielle avec les histogrammes des données, on remarque de très fortes ressemblances, beaucoup plus que pour la loi uniforme ou la loi normale. 
+\paragraph{}     
+De plus, on a remarqué empiriquement que le temps d'attente moyen ne changeait pas en fonction du temps qu'on avait déjà passé à  attendre. Par exemple pour un temps moyen de 5s, après 2s passées à attendre le temps moyen d'attente est toujours de 5s. Or, la loi exponentielle est une loi sans mémoire, c'est à dire que ses valeurs ne sont pas influencées par la valeurs précédentes, ce qui colle parfaitement avec le comportement de nos données.
+\paragraph{}
+Nous préconisons donc l’utilisation de cette loi exponentielle pour la reproduction de données réalistes et fiables dans l’optique d’une étude et d’une analyse poussées du système.
 
 \newpage
 \appendix
@@ -633,7 +689,7 @@ histplot(ClassesDeciles,t_ia,style=2)
 a=min(t_ia):0.01:max(t_ia)
 m=mean(t_ia)
 v=stdev(t_ia)
-b=(1/(v*sqrt(2*%pi))*exp((-1/2)*((a-m)/v)^2))
+b=(1/(v*sqrt(2*\%pi))*exp((-1/2)*((a-m)/v)^2))
 plot2d2(a,b,style=1)
 
 // Densité de la loi exponentielle
@@ -653,6 +709,52 @@ normale","Densité de la loi exponentielle","Densité de la loi uniforme")
 a=gca();
 a.x_location = "origin";
 a.grid=[5,5];
+\end{verbatim}
+
+\subsubsection{Propriété d'abscense de mémoire}
+\begin{verbatim}
+extremesS = [min(t_ia), max(t_ia)] // calcul du min et du max
+moyenneS = mean(t_ia) // calcul de la moyenne
+medianeS = perctl(t_ia,50) // calcul de la mediane
+// calcul de la variance et de l'écart-type
+vS = variance(t_ia)
+sS = stdev(t_ia)
+// calcul de l'étendue
+etendueS = extremesS(2) - extremesS(1)
+Q1S = perctl(t_ia, 25) // premier quartile
+Q3S = perctl(t_ia, 75) // troisième quartile
+IQS = Q3S(1) - Q1S(1) // intervalle interquartile
+
+index_bool3 = (t_ia > 1)
+tab_ia = t_ia(index_bool3)
+new_t_ia = tab_ia - 1
+extremes_ia = [min(new_t_ia), max(new_t_ia)] // calcul du min et du max
+moyenne_ia = mean(new_t_ia) // calcul de la moyenne
+mediane_ia = perctl(new_t_ia,50) // calcul de la mediane
+// calcul de la variance et de l'écart-type
+v = variance(new_t_ia)
+e = stdev(new_t_ia)
+// calcul de l'étendue
+etendue = extremes_ia(2) - extremes_ia(1)
+Q1_ = perctl(new_t_ia, 25) // premier quartile
+Q3_ = perctl(new_t_ia, 75) // troisième quartile
+IQ = Q3_(1) - Q1_(1) // intervalle interquartile
+
+comparaison = [moyenne_ia - moyenneS, mediane_ia(1) - medianeS(1), v - vS, e - sS, etendue - etendueS]
+
+subplot(1,2,1)
+deciles=perctl(t_ia,10:10:90);
+for i=2:10
+    ClassesDeciles(i)=deciles(i-1)
+end
+ClassesDeciles(1)=min(t_ia)
+ClassesDeciles(11)=max(t_ia)
+histplot(ClassesDeciles,t_ia,style=2)
+legend("Histogramme avec temps de service")
+
+subplot(1,2,2)
+histplot(ClassesDeciles,new_t_ia,style=1)
+legend("Histogramme avec temps de services à partir de 1 seconde")
 \end{verbatim}
 
 \subsection{Serveur 1}
@@ -718,7 +820,7 @@ histplot(ClassesDeciles,t_s1,style=2)
 a=min(t_s1):0.01:max(t_s1)
 m=mean(t_s1)
 v=stdev(t_s1)
-b=(1/(v*sqrt(2*%pi))*exp((-1/2)*((a-m)/v)^2))
+b=(1/(v*sqrt(2*\%pi))*exp((-1/2)*((a-m)/v)^2))
 plot2d2(a,b,style=1)
 
 // Densité de la loi exponentielle
@@ -849,7 +951,7 @@ histplot(ClassesDeciles,t_s2,style=2)
 a=min(t_s2):0.01:max(t_s2)
 m=mean(t_s2)
 v=stdev(t_s2)
-b=(1/(v*sqrt(2*%pi))*exp((-1/2)*((a-m)/v)^2))
+b=(1/(v*sqrt(2*\%pi))*exp((-1/2)*((a-m)/v)^2))
 plot2d2(a,b,style=1)
 
 // Densité de la loi exponentielle
@@ -1050,7 +1152,5 @@ legend("Histogramme avec temps de services à partir de 1 seconde")
 
 %----------------------------------
 
-\begin{verbatim}
-\end{verbatim}
 
 \end{document}

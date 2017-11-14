@@ -134,3 +134,50 @@ legend("Histogramme avec temps de service")
 subplot(1,2,2)
 histplot(ClassesDeciles,new_t_s3,style=1)
 legend("Histogramme avec temps de services à partir de 1 seconde")
+
+
+// Temps interarrivés
+
+extremesS = [min(t_ia), max(t_ia)] // calcul du min et du max
+moyenneS = mean(t_ia) // calcul de la moyenne
+medianeS = perctl(t_ia,50) // calcul de la mediane
+// calcul de la variance et de l'écart-type
+vS = variance(t_ia)
+sS = stdev(t_ia)
+// calcul de l'étendue
+etendueS = extremesS(2) - extremesS(1)
+Q1S = perctl(t_ia, 25) // premier quartile
+Q3S = perctl(t_ia, 75) // troisième quartile
+IQS = Q3S(1) - Q1S(1) // intervalle interquartile
+
+index_bool3 = (t_ia > 1)
+tab_ia = t_ia(index_bool3)
+new_t_ia = tab_ia - 1
+extremes_ia = [min(new_t_ia), max(new_t_ia)] // calcul du min et du max
+moyenne_ia = mean(new_t_ia) // calcul de la moyenne
+mediane_ia = perctl(new_t_ia,50) // calcul de la mediane
+// calcul de la variance et de l'écart-type
+v = variance(new_t_ia)
+e = stdev(new_t_ia)
+// calcul de l'étendue
+etendue = extremes_ia(2) - extremes_ia(1)
+Q1_ = perctl(new_t_ia, 25) // premier quartile
+Q3_ = perctl(new_t_ia, 75) // troisième quartile
+IQ = Q3_(1) - Q1_(1) // intervalle interquartile
+
+comparaison = [moyenne_ia - moyenneS, mediane_ia(1) - medianeS(1), v - vS, e - sS, etendue - etendueS]
+
+subplot(1,2,1)
+deciles=perctl(t_ia,10:10:90);
+for i=2:10
+    ClassesDeciles(i)=deciles(i-1)
+end
+ClassesDeciles(1)=min(t_ia)
+ClassesDeciles(11)=max(t_ia)
+histplot(ClassesDeciles,t_ia,style=2)
+legend("Histogramme avec temps de service")
+
+subplot(1,2,2)
+histplot(ClassesDeciles,new_t_ia,style=1)
+legend("Histogramme avec temps de services à partir de 1 seconde")
+
