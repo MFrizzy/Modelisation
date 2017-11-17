@@ -18,8 +18,8 @@ i2 = (t>=-1) & (t<=0);
 i3 = (t>0) & (t<=1);
 i4 = t>1;
 R(i1) = 0;
-R(i2) = R(i2)+((R(i2)^2)/2)
-R(i3) = R(i3)-((R(i3)^2)/2)
+R(i2) = 0.5 + R(i2)+((R(i2)^2)/2)
+R(i3) = 0.5 + R(i3)-((R(i3)^2)/2)
 R(i4) = 1;
 plot2d(t,R,style=2)
 legend("Fonction de répartition de la loi tente")
