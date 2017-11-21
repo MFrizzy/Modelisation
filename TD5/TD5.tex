@@ -55,10 +55,68 @@ $$
 \end{center}
 \paragraph{}
 
+\newpage
+
 \subsection{Fonction de répartition}
 
 \subsubsection{Fonction}
-%TODO
+
+\begin{align}
+f(x)=\left\{
+	\begin{array}{llll}
+		f(x)=0 &\mbox{pour } x<-1\\
+		f(x)=1+x & \mbox{pour } -1<x<0 \\
+		f(x)=1-x & \mbox{pour } 0<x<1 \\
+		f(x)=0 & \mbox{pour } x>1 \\
+	\end{array}
+\right. 
+\end{align}
+\begin{align}
+<=>
+F(x)=\left\{
+	\begin{array}{llll}
+		\displaystyle \int_{- \infty }^{x} 0 \, \mathrm{d}x &\mbox{pour } x<-1\\
+		\displaystyle \int_{- \infty }^{-1} 0 \, \mathrm{d}x+\displaystyle \int_{-1 }^{x} 1+x \, \mathrm{d}x &\mbox{pour } -1<x<0\\
+		\displaystyle \int_{- \infty }^{-1} 0 \, \mathrm{d}x+\displaystyle \int_{-1 }^{0} 1+x \, \mathrm{d}x + \displaystyle \int_{0}^{x} 1-x \, \mathrm{d}x &\mbox{pour } 0<x<1\\
+		\displaystyle \int_{- \infty }^{-1} 0 \, \mathrm{d}x+\displaystyle \int_{-1 }^{0} 1+x \, \mathrm{d}x + \displaystyle \int_{0}^{1} 1-x \, \mathrm{d}x+\displaystyle \int_{1}^{x} 0 \, \mathrm{d}x &\mbox{pour } x>1\\
+	\end{array}
+\right. 
+\end{align}
+\begin{align}
+<=>
+F(x)=\left\{
+	\begin{array}{llll}
+		0 &\mbox{pour } x<-1\\
+		0 + \displaystyle \int_{-1 }^{x} 1+x \, \mathrm{d}x &\mbox{pour } -1<x<0\\
+		0+\frac{1}{2}+\displaystyle \int_{0}^{x} 1-x \, \mathrm{d}x &\mbox{pour } 0<x<1\\
+		0+\frac{1}{2}+\frac{1}{2}+\displaystyle \int_{1}^{x} 0 \, \mathrm{d}x &\mbox{pour } x>1\\
+	\end{array}
+\right. 
+\end{align}
+\begin{align}
+<=>
+F(x)=\left\{
+	\begin{array}{llll}
+		0 &\mbox{pour } x<-1\\
+		\displaystyle \int_{-1 }^{x} 1+x \, \mathrm{d}x &\mbox{pour } -1<x<0\\
+		\frac{1}{2}+\displaystyle \int_{0}^{x} 1-x \, \mathrm{d}x &\mbox{pour } 0<x<1\\
+		1 &\mbox{pour } x>1\\
+	\end{array}
+\right. 
+\end{align}
+\begin{align}
+<=>
+F(x)=\left\{
+	\begin{array}{llll}
+		0 & \mbox{pour } x<-1\\
+		\frac{1}{2} + x + \frac{x^2}{2}\\
+		\frac{1}{2} + x - \frac{x^2}{2}\\
+		1 & \mbox{pour } x>1\\
+	\end{array}
+\right.
+\end{align}
+
+
 
 \subsubsection{Représentation graphique}
 \begin{center}
