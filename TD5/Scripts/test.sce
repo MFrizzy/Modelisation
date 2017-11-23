@@ -66,6 +66,10 @@ endfunction
 histplot(10,V(10000))
 
 
+//----------------------------------- Tentative de faire une fonction inverse
+
+
+
 
 t = linspace(-1, 1, 301);
 T = t;

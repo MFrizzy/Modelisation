@@ -109,22 +109,89 @@ F(x)=\left\{
 F(x)=\left\{
 	\begin{array}{llll}
 		0 & \mbox{pour } x<-1\\
-		\frac{1}{2} + x + \frac{x^2}{2}\\
-		\frac{1}{2} + x - \frac{x^2}{2}\\
+		\frac{1}{2} + x + \frac{x^2}{2} &\mbox{pour } -1<x<0\\
+		\frac{1}{2} + x - \frac{x^2}{2} &\mbox{pour } 0<x<1\\
+		1 & \mbox{pour } x>1\\
+	\end{array}
+\right.
+\end{align}
+\begin{align}
+<=>
+F(x)=\left\{
+	\begin{array}{llll}
+		0 & \mbox{pour } x<-1\\
+		\frac{1}{2} \times (1 + 2x + x^2) &\mbox{pour } -1<x<0\\
+		-\frac{1}{2} \times (-1 - 2x + x^2 +1 -1) &\mbox{pour } 0<x<1\\
+		1 & \mbox{pour } x>1\\
+	\end{array}
+\right.
+\end{align}
+\begin{align}
+<=>
+F(x)=\left\{
+	\begin{array}{llll}
+		0 & \mbox{pour } x<-1\\
+		\frac{(1+x)^2}{2} &\mbox{pour } -1<x<0\\
+		\frac{2-(1-x)^2}{2} &\mbox{pour } 0<x<1\\
 		1 & \mbox{pour } x>1\\
 	\end{array}
 \right.
 \end{align}
 
-
-
 \subsubsection{Représentation graphique}
 \begin{center}
-\includegraphics[width=425px]{img/tente_repartition.png} %TODO FAUX A CHANGER
+\includegraphics[width=425px]{img/tente_repartition.png}
 \end{center}
 \paragraph{}
 
 \subsection{Inverse}
+
+\subsubsection{Fonction}
+\paragraph{} On va donc inverser les deux fonctions de répartitions de la loi tente% \eqref{tente}
+
+\begin{align}
+\left\{
+	\begin{array}{ll}
+		y_1=\frac{(1+x)^2}{2} &\mbox{pour } -1<x<0\\
+		y_2=\frac{2-(1-x)^2}{2} &\mbox{pour } 0<x<1\\
+	\end{array}
+\right.
+%\label{tente}
+\end{align}
+\begin{align}
+y_1 & =\frac{(1+x)^2}{2} & y_2 & = \frac{2-(1-x)^2}{2} \\
+2y_1 & = (1+x)^2 & 2y_2 & = 2 - (1-x)^2 \\
+\sqrt{2y_1} & = 1+x & 2-2y_2 & = (1-x)^2 \\
+x & = \sqrt{2y_1} - 1 & x & = 1- \sqrt{ 2-2y_2}
+\end{align}
+\begin{align}
+\intertext{Donc la fonction inverse est :}
+F^{-1}(x)=\left\{
+		\begin{array}{ll}
+			\sqrt{2x}-1 & \mbox{pour} 0<x<\frac{1}{2} \\
+			1-\sqrt{2-2x} & \mbox{pour} \frac{1}{2}<x<1
+		\end{array}
+\right.
+\end{align}
+
+
+\subsubsection{Représentation graphique}
+\begin{center}
+%\includegraphics[width=425px]{img/tente_inverse.png}
+\end{center}
+
+\section{Inverse de la fonction de répartition de la loi exponentielle}
+
+\subsection{Fonction}
+\begin{align}
+y & = 1 - e^{- \lambda t} \\
+e^{- \lambda t} & =1-y \\
+-\lambda t &= ln(1-y) \\
+t &= - \frac{ln(1-y)}{\lambda}
+\intertext{Donc la fonction inverse est : }
+F^{-1}(t)&=- \frac{ln(1-y)}{\lambda}
+\end{align}
+\subsection{Représentation graphique}
 
 \part{Conclusion}
 \paragraph{}
@@ -161,7 +228,7 @@ plot2d(t,R,style=2)
 legend("Fonction de répartition de la loi tente")
 \end{verbatim}
 
-
+\subsection{Représentation graphique de la fonction inverse}
 
 \begin{verbatim}
 \end{verbatim}
