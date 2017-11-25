@@ -35,13 +35,13 @@ R(i1)=-(R(i1)^2+1)/2;
 R(i2)=(R(i2)^2+1)/2;
 plot2d(t,I,style=2)
 
-function t = V(n) // forme vectorielle. Renvoie un ech de taille n.
-u = rand(n, 1); // echantillon uniforme sur [0 ; 1]. Taille n
-t = u // on prépare un vecteur de même taille pour l'image
-i1 = u < 1/2 // indices booléens des u < 1.2
-i2 = u >= 1/2 // indices booléens des u >= 1.2
-t(i1) = -(t(i1)^2+1)/2 // inversion pour les u < 1/2
-t(i2) = (t(i2)^2-1)/2 // inversion pour les autres
+function t = V(n)
+    u = rand(n, 1);
+    t = u
+    i1 = u < 1/2
+    i2 = u >= 1/2
+    t(i1) = sqrt(2*t(i1))-1;
+    t(i2) = 1-sqrt(2-2*t(i2));
 endfunction
 
 histplot(10,V(10000))

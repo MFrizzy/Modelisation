@@ -3,5 +3,11 @@ function t = V(l,n)
     t = u
     t = -log(1-t)/l 
 endfunction
+histplot(20,V(1,100000))
 
-histplot(10,V(1,10000))
+a=0:0.01:12;
+lambda=1;
+b=lambda*exp(-lambda*a);
+plot2d2(a,b,style=1)
+
+legend("Simulation de la loi exponentielle","Densité de la loi exponentielle")

@@ -32,8 +32,95 @@
 
 \section{Essaies randoms}
 
-\subsection{}
+\subsection{Loi Hypergeometrique}
+\begin{verbatim}
+function s=hypergeo(N,n,P)
+    M=P*N;
+    s=0;
+    for i=0:n-1
+        if rand()<P
+            M=M-1;
+            N=N-1;
+            s=s+1;
+            P=M/N;
+        else
+            N=N-1;
+            P=M/N;
+        end         
+    end
+endfunction
+N=20; n=3; P=2/20;t=[];
+for j=1:100
+    t(j)=hypergeo(N,n,P); //100 tirages de loi hypergeo
+end
+frequences=tabul(t)    // on calcule les frequences obtenues
+disp(frequences)
+\end{verbatim}
 
+\subsection{Preuve mathématique}
+\begin{align}
+\intertext{Paramètres}
+N=20 ; n=3 ; m = 2 : P = \frac{2}{20}
+\\
+P(X=0)=\frac{
+\begin{pmatrix}
+m \\ 0
+\end{pmatrix}
+\times 
+\begin{pmatrix}
+N - m \\ 3
+\end{pmatrix}
+}{
+\begin{pmatrix}
+N \\ n
+\end{pmatrix}
+} 
+\end{align}
+\begin{align}
+P(X=0)=\frac{
+\begin{pmatrix}
+2 \\ 0
+\end{pmatrix}
+\times 
+\begin{pmatrix}
+18 \\ 3
+\end{pmatrix}
+}{
+\begin{pmatrix}
+20 \\ 3
+\end{pmatrix}
+}= \frac{\frac{18\times17\times16}{3\times2\times1}}{\frac{20\times19\times18}{3 \times 2}} = 0.7158
+\end{align} 
+\begin{align}
+P(X=1)=\frac{
+\begin{pmatrix}
+2 \\ 1
+\end{pmatrix}
+\times 
+\begin{pmatrix}
+18 \\ 2
+\end{pmatrix}
+}{
+\begin{pmatrix}
+20 \\ 3
+\end{pmatrix}
+}= \frac{2 \times \frac{18\times17}{2}}{\frac{20\times19\times18}{3 \times 2}} = 0.2684
+\end{align}
+\begin{align}
+P(X=2)=\frac{
+\begin{pmatrix}
+2 \\ 2
+\end{pmatrix}
+\times 
+\begin{pmatrix}
+18 \\ 1
+\end{pmatrix}
+}{
+\begin{pmatrix}
+20 \\ 3
+\end{pmatrix}
+}= \frac{1 \times 18}{\frac{20\times19\times18}{3 \times 2}} = 0.0158
+\end{align}
 \section{Etude mathématique de la loi tente}
 
 \subsection{Densité}
@@ -177,7 +264,7 @@ F^{-1}(x)=\left\{
 
 \subsubsection{Représentation graphique}
 \begin{center}
-%\includegraphics[width=425px]{img/tente_inverse.png}
+\includegraphics[width=425px]{img/tente_inversion.png}
 \end{center}
 
 \section{Inverse de la fonction de répartition de la loi exponentielle}
@@ -192,6 +279,11 @@ t &= - \frac{ln(1-y)}{\lambda}
 F^{-1}(t)&=- \frac{ln(1-y)}{\lambda}
 \end{align}
 \subsection{Représentation graphique}
+
+\begin{center}
+\includegraphics[width=425px]{img/inv_expo.png}
+\end{center}
+\paragraph{}
 
 \part{Conclusion}
 \paragraph{}
@@ -229,8 +321,45 @@ legend("Fonction de répartition de la loi tente")
 \end{verbatim}
 
 \subsection{Représentation graphique de la fonction inverse}
-
 \begin{verbatim}
+function t = V(n)
+    u = rand(n, 1);
+    t = u
+    i1 = u < 1/2
+    i2 = u >= 1/2
+    t(i1) = sqrt(2*t(i1))-1;
+    t(i2) = 1-sqrt(2-2*t(i2));
+endfunction
+histplot(20,V(10000))
+
+t = linspace(-1, 1, 301);
+T = t;
+i1 = (t>=-1) & (t<=1);
+i2 = t>1 & t<-1;
+T(i1)=1-abs(T(i1));
+T(i2)=0
+plot2d(t,T,style=1)
+
+legend("Fonction de densité de la loi tente","Simulation de la loi tente")
+\end{verbatim}
+
+\section{Inverse de la fonction de répartition}
+
+\subsection{Représentation graphique de la fonction inverse}
+\begin{verbatim}
+function t = V(l,n)
+    u = rand(n, 1);
+    t = u
+    t = -log(1-t)/l 
+endfunction
+histplot(20,V(1,100000))
+
+a=0:0.01:12;
+lambda=1;
+b=lambda*exp(-lambda*a);
+plot2d2(a,b,style=1)
+
+legend("Simulation de la loi exponentielle","Densité de la loi exponentielle")
 \end{verbatim}
 
 %----------------------------------
