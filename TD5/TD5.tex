@@ -326,7 +326,8 @@ Comme pour le graphique précédent, celui-ci représente l’histogramme des é
 Lorsqu’on calcule l’écart entre les mesures réalisées dans le dernier rapport ( temps inter-arrivés), qui semblaient suivre une loi exponentielle,  et une loi exponentielle, toutes deux de même paramètre $ \lambda = 1/moyenne(t_ia)$ , l’écart mesuré est de 14 . Or, 14 est inférieur au seuil 17, on peut donc estimer de façon assez certaine que les temps inter-arrivées suivent une loi exponentielle.
 
 \paragraph{}
-Nous allons faire de même pour les temps de service des trois serveurs, qui semblent aussi suivre des loi exponentielles de paramètre $\lambda = 1/moyenne(temps de service)$. On obtient les écarts suivants :
+Nous allons faire de même pour les temps de service des trois serveurs, qui semblent aussi suivre des loi exponentielles de paramètre
+ $\lambda = 1/moyenne(temps de service)$. On obtient les écarts suivants :
 \begin{center}
 \begin{tabular}{cccc}
 Serveur & 1 & 2 & 3 \\
@@ -339,6 +340,7 @@ Ecarts & 8.1 & 4.02 & 7.07 \\
 Ainsi, on constate que les trois serveurs ont des temps de service qui suivent une loi exponentielle de paramètre $\lambda= 1/moyenne(temps de service)$.
 \section{Conclusion}
 \paragraph{}
+Notre hypothèse initiale était que les temps inter-arrivés et les temps de service des 3 serveurs suivent tous une loi exponentielle de paramètre $\lambda=1/moyenne(valeurs)$, propre à chacun. Grâce à des simulations de loi exponentielle, nous avons pu déterminer un seuil au-dessus duquel les écarts entre valeurs théoriques et empiriques seraient trop grands pour appartenir à la même loi.  En calculant les écarts entre la simulation de loi exponentielle et les données des serveurs qui semblent suivre une loi exponentielle, nous avons pu déterminer que ceux-ci étaient en-dessous du seuil, ce qui confirme donc notre hypothèse initiale.
 
 \newpage
 \appendix
