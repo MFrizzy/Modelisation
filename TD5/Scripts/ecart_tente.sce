@@ -1,7 +1,6 @@
 // a) calcul de k classes
 
 function q = quantile(p)
-    // on devrait vérifier que 0 < p < 1
     if p < 0.5 then
         q = sqrt(2*p)-1;
     else
@@ -32,19 +31,20 @@ N = 10000
 d = zeros(1, N);
 for i = 1:N
     Oi = histc(C, V(3000), normalization = %f);
-    d(i) = sum((Oi - Ei) .^2 ./ Ei);
+    // calcul de la différence et stockage dans le tableau d
+    d(i) = sum((Oi - Ei) .^2 ./ Ei); 
 end
 
 histplot(20,d)
+legend("10 000 réalisations de la mesure d écart")
+
+seuil=perctl(d,95)
 
 
 
 
 
 
-
-
-a=perctl(d,95)
 aa=a(1)
 b=d<aa
 

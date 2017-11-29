@@ -1,9 +1,9 @@
-function t = V(l,n)
+function t = expo(l,n)
     u = rand(n, 1);
     t = u
     t = -log(1-t)/l
 endfunction
-histplot(20,V(1,100000))
+histplot(20,expo(1,100000))
 
 a=0:0.01:12;
 lambda=1;
