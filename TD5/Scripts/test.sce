@@ -79,3 +79,34 @@ T(i3)=1-abs(T(i3));
 T(i4)=0
 plot2d(t,T)
 legend("Fonction de densité de la loi tente")
+
+
+
+//------------------------------------
+
+function q = quantile(p)
+// on devrait vérifier que 0 < p < 1
+if p < 0.5 then
+q = -sqrt(1 - 2 * p) // inverse la fr pour p < 1/2
+else
+q = sqrt(2 * p - 1) // idem pour p >= 1/2
+end
+endfunction
+
+n = 10; // nb de classes
+C = zeros(1, n + 1) // on prépare les bornes des classes
+C(1) = -1; C(n+1) = 1; // d'abord les deux extrêmes
+for i = 1:(n-1) // calcul des quantiles d'ordre i/n
+C(i+1) = quantile(i/n);
+end
+format(6) // pour une meilleure lecture
+C // affichage des classes. On remarque la symétrie
+
+Ei = 3000 / n * ones(1, n)
+N = 10000 // Nb de valeurs de d à simuler
+d = zeros(1, N); // on va stocker les valeurs dans d
+for i = 1:N
+Oi = histc(C, V(3000), normalization = %f); // nouvel echantillon
+d(i) = sum((Oi - Ei) .^2 ./ Ei); // mesure de l'écart
+end
+histplot(20, d)
