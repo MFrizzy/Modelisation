@@ -315,6 +315,10 @@ F^{-1}(t)&=- \frac{ln(1-y)}{\lambda}
 \includegraphics[width=425px]{img/ecart_expo.png}
 \end{center}
 
+\subsection{Mesure de l'écart entre les données et la loi exponentielle}
+
+
+
 \section{Conclusion}
 \paragraph{}
 
@@ -396,7 +400,115 @@ plot2d2(a,b,style=1)
 legend("Simulation de la loi exponentielle","Densité de la loi exponentielle")
 \end{verbatim}
 
+\section{Mesure de l'écart}
+
+\subsection{Mesure de l'écart pour la loi tente}
+\begin{verbatim}
+function q = quantile(p)
+    if p < 0.5 then
+        q = sqrt(2*p)-1;
+    else
+        q = 1-sqrt(2-2*p)
+    end
+endfunction
+
+function t = tente(n)
+    u = rand(n, 1);
+    t = u
+    i1 = u < 1/2
+    i2 = u >= 1/2
+    t(i1) = sqrt(2*t(i1))-1;
+    t(i2) = 1-sqrt(2-2*t(i2));
+endfunction
+
+n = 10;
+C = zeros(1, n + 1)
+C(1) = -1; C(n+1) = 1; 
+for i = 1:(n-1)
+    C(i+1) = quantile(i/n);
+end
+format(6)
+
+Ei = 3000 / n // effectif espéré dans chaque classe
+
+N = 10000
+d = zeros(1, N);
+for i = 1:N
+    Oi = histc(C, tente(3000), normalization = \%f);
+    // calcul de la différence et stockage dans le tableau d
+    d(i) = sum((Oi - Ei) .^2 ./ Ei); 
+end
+
+histplot(20,d)
+legend("10 000 réalisations de la mesure d écart")
+
+seuil=perctl(d,95)
+\end{verbatim}
+
+\subsection{Mesure de l'écart pour la loi exponentielle}
+\begin{verbatim}
+function q = quantile(l,p)
+    q = -log(1-p)/l
+endfunction
+
+function t = expo(l,n)
+    u = rand(n, 1);
+    t = u
+    t = -log(1-t)/l
+endfunction
+
+lambda=1;
+
+n = 10;
+C = zeros(1, n + 1)
+C(1) = 0; C(n+1) = 1000000000000; 
+for i = 1:(n-1)
+    C(i+1) = quantile(lambda,i/n);
+end
+format(6)
+
+Ei = 3000 / n // effectif espéré dans chaque classe
+
+N = 10000
+d = zeros(1, N);
+for i = 1:N
+    Oi = histc(C, expo(lambda,3000), normalization = \%f);
+    d(i) = sum((Oi - Ei) .^2 ./ Ei);
+end
+
+histplot(20,d)
+legend("10 000 réalisations de la mesure d écart")
+
+seuil=perctl(d,95)
+\end{verbatim}
+
+\subsection{Mesure de l'écart entre les données et la loi exponentielle}
+\begin{verbatim}
+// Extraction des temps inter-arrivées
+t_ia = data(2:$, 2) - data(1:1237, 2);
+
+function q = quantile(l,p)
+    q = -log(1-p)/l
+endfunction
+
+lambda=1/mean(t_ia);
+
+n = 10;
+C = zeros(1, n + 1)
+C(1) = 0; C(n+1) = 100; 
+for i = 1:(n-1)
+    C(i+1) = quantile(lambda,i/n);
+end
+format(6)
+
+Ei = 1237 / n // effectif espéré dans chaque classe
+
+Oi = histc(C, t_ia, normalization = \%f);
+d = sum((Oi - Ei) .^2 ./ Ei);
+\end{verbatim}
+
 %----------------------------------
+
 
 
 \end{document}

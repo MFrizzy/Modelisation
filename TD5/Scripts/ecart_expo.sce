@@ -1,7 +1,7 @@
 // a) calcul de k classes
 
 function q = quantile(l,p)
-    q = -log(l-p)/l
+    q = -log(1-p)/l
 endfunction
 
 function t = expo(l,n)
@@ -14,7 +14,7 @@ lambda=1;
 
 n = 10;
 C = zeros(1, n + 1)
-C(1) = 0; C(n+1) = 8; 
+C(1) = 0; C(n+1) = 1000000000000; 
 for i = 1:(n-1)
     C(i+1) = quantile(lambda,i/n);
 end
@@ -32,10 +32,7 @@ end
 histplot(20,d)
 legend("10 000 réalisations de la mesure d écart")
 
-a=perctl(d,95)
-
-
-
+seuil=perctl(d,95)
 
 
 

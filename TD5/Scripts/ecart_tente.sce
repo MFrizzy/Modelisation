@@ -30,7 +30,7 @@ Ei = 3000 / n // effectif espéré dans chaque classe
 N = 10000
 d = zeros(1, N);
 for i = 1:N
-    Oi = histc(C, V(3000), normalization = %f);
+    Oi = histc(C, tente(3000), normalization = %f);
     // calcul de la différence et stockage dans le tableau d
     d(i) = sum((Oi - Ei) .^2 ./ Ei); 
 end
