@@ -252,7 +252,7 @@ F(x)=\left\{
 \subsection{Inverse}
 
 \subsubsection{Fonction}
-\paragraph{} On va donc inverser les deux fonctions de répartitions de la loi tente% \eqref{tente}
+\paragraph{} On va donc inverser les deux fonctions de répartitions de la loi tente \eqref{tente}
 
 \begin{align}
 \left\{
@@ -309,16 +309,34 @@ F^{-1}(t)&=- \frac{ln(1-y)}{\lambda}
 \begin{center}
 \includegraphics[width=425px]{img/ecart_tente.png}
 \end{center}
+\paragraph{}
+Ce graphique représente l’histogramme de l’écart entre les valeurs théoriques et empiriques de 10 000 réalisations, pour la loi tente.  On peut voir que la grande majorité des écarts se situe entre 5 et 10. Cependant, on constate qu’à cause de  la fluctuation d’échantillonnage, certains écarts sont très importants.  Il est donc essentiel de se donner une marge d’erreur, afin de pouvoir affirmer avec une relative certitude si un échantillon donné suit une loi tente. 
+Dans notre cas, on sait que 95\% des écarts sont inférieurs à  16.65: on pourra donc conclure qu’un échantillon suit une loi tente si il ne dépasse pas le seuil de 16.65.
+
 
 \subsection{Mesure de l'écart pour la loi exponentielle}
 \begin{center}
 \includegraphics[width=425px]{img/ecart_expo.png}
 \end{center}
+\paragraph{}
+Comme pour le graphique précédent, celui-ci représente l’histogramme des écarts sur 10 000 réalisations, cette fois-ci pour la loi exponentielle de paramètre lambda=1. Ici, la plupart des écarts se situent entre 4 et 11. Néanmoins on observe toujours des valeurs très distante de la moyenne, on va donc aussi utiliser une marge d’erreur à 95\%: dans ce cas, 95\% des écarts sont inférieurs à 17,1, qui sera donc le seuil à ne pas dépasser pour qu’un échantillon suive une loi exponentielle.
 
 \subsection{Mesure de l'écart entre les données et la loi exponentielle}
+\paragraph{}
+Lorsqu’on calcule l’écart entre les mesures réalisées dans le dernier rapport ( temps inter-arrivés), qui semblaient suivre une loi exponentielle,  et une loi exponentielle, toutes deux de même paramètre $ \lambda = 1/moyenne(t_ia)$ , l’écart mesuré est de 14 . Or, 14 est inférieur au seuil 17, on peut donc estimer de façon assez certaine que les temps inter-arrivées suivent une loi exponentielle.
 
-
-
+\paragraph{}
+Nous allons faire de même pour les temps de service des trois serveurs, qui semblent aussi suivre des loi exponentielles de paramètre $\lambda = 1/moyenne(temps de service)$. On obtient les écarts suivants :
+\begin{center}
+\begin{tabular}{cccc}
+Serveur & 1 & 2 & 3 \\
+\hline
+Ecarts & 8.1 & 4.02 & 7.07 \\
+\hline
+\end{tabular}
+\end{center}
+\paragraph{}
+Ainsi, on constate que les trois serveurs ont des temps de service qui suivent une loi exponentielle de paramètre $\lambda= 1/moyenne(temps de service)$.
 \section{Conclusion}
 \paragraph{}
 
@@ -509,6 +527,84 @@ d = sum((Oi - Ei) .^2 ./ Ei);
 
 %----------------------------------
 
+ \subsection{Mesure de l'écart pour les temps de service du serveur 1}
+\begin{verbatim}
+// Extraction des temps de service
+index_bool = ( data(:, 3) == 1 )
+tabS1 = data(index_bool, :)
+t_s1 = tabS1(1:$,4);
 
+function q = quantile(l,p)
+    q = -log(1-p)/l
+endfunction
 
+lambda=1/mean(t_s1);
+
+n = 10;
+C = zeros(1, n + 1)
+C(1) = 0; C(n+1) = 10000; 
+for i = 1:(n-1)
+    C(i+1) = quantile(lambda,i/n);
+end
+format(6)
+
+Ei = 412 / n // effectif espéré dans chaque classe
+
+Oi = histc(C, t_s1, normalization = \%f);
+d = sum((Oi - Ei) .^2 ./ Ei);
+\end{verbatim}
+
+ \subsection{Mesure de l'écart pour les temps de service du serveur 2}
+\begin{verbatim}
+// Extraction des temps de service
+index_bool = ( data(:, 3) == 2 )
+tabS1 = data(index_bool, :)
+t_s1 = tabS1(1:$,4);
+
+function q = quantile(l,p)
+    q = -log(1-p)/l
+endfunction
+
+lambda=1/mean(t_s1);
+
+n = 10;
+C = zeros(1, n + 1)
+C(1) = 0; C(n+1) = 10000; 
+for i = 1:(n-1)
+    C(i+1) = quantile(lambda,i/n);
+end
+format(6)
+
+Ei = 413 / n // effectif espéré dans chaque classe
+
+Oi = histc(C, t_s1, normalization = \%f);
+d = sum((Oi - Ei) .^2 ./ Ei);
+\end{verbatim}
+
+ \subsection{Mesure de l'écart pour les temps de service du serveur 3}
+\begin{verbatim}
+// Extraction des temps de service
+index_bool = ( data(:, 3) == 3 )
+tabS1 = data(index_bool, :)
+t_s1 = tabS1(1:$,4);
+
+function q = quantile(l,p)
+    q = -log(1-p)/l
+endfunction
+
+lambda=1/mean(t_s1);
+
+n = 10;
+C = zeros(1, n + 1)
+C(1) = 0; C(n+1) = 10000; 
+for i = 1:(n-1)
+    C(i+1) = quantile(lambda,i/n);
+end
+format(6)
+
+Ei = 413 / n // effectif espéré dans chaque classe
+
+Oi = histc(C, t_s1, normalization = \%f);
+d = sum((Oi - Ei) .^2 ./ Ei);
+\end{verbatim}
 \end{document}
