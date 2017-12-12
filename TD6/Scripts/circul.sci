@@ -34,3 +34,82 @@ mu = [1/15, 1/10, 1/6]; // loi des temps de service des trois serveurs
 plot2d(Q1(:,1), Q1(:,2), style= 1)
 plot2d(Q2(:,1), Q2(:,2), style= 2)
 plot2d(Q3(:,1), Q3(:,2), style= 3)
+
+function t_mr = texecut(Q1, Q2, Q3)
+    //requetes sorties
+    Q_s1 = Q1(Q1(:,3) == -1,1)
+    Q_s2 = Q2(Q2(:,3) == -1,1)
+    Q_s3 = Q3(Q3(:,3) == -1,1)
+    
+    //length file d'attentes requetes sorties
+    l_s1 = length(Q_s1)
+    l_s2 = length(Q_s2)
+    l_s3 = length(Q_s3)
+    
+    //requetes entrées
+    Q_re1 = Q1(Q1(:,3) == 1,1)
+    Q_re2 = Q2(Q2(:,3) == 1,1)
+    Q_re3 = Q3(Q3(:,3) == 1,1)
+    
+    //nb requetes entrées = nb requetes sorties
+    Q_e1 = Q_re1(1:l_s1,1)
+    Q_e2 = Q_re2(1:l_s2,1)
+    Q_e3 = Q_re3(1:l_s3,1)
+    
+    //temps sortie - temps entrée 
+    t_e1 = Q_s1 - Q_e1
+    t_e2 = Q_s2 - Q_e2
+    t_e3 = Q_s3 - Q_e3
+    
+    //temps moyen requete par serveur
+    t1 = mean(t_e1)
+    t2 = mean(t_e2)
+    t3 = mean(t_e3)
+    
+    //temps moyen systeme
+    t_mr = (t1+t2+t3)/3
+
+endfunction
+
+function [t1,t2,t3] = ttexecut(Q1,Q2,Q3)
+    //requetes sorties
+    Q_s1 = Q1(Q1(:,3) == -1,1)
+    Q_s2 = Q2(Q2(:,3) == -1,1)
+    Q_s3 = Q3(Q3(:,3) == -1,1)
+    
+    //length file d'attentes requetes sorties
+    l_s1 = length(Q_s1)
+    l_s2 = length(Q_s2)
+    l_s3 = length(Q_s3)
+    
+    //requetes entrées
+    Q_re1 = Q1(Q1(:,3) == 1,1)
+    Q_re2 = Q2(Q2(:,3) == 1,1)
+    Q_re3 = Q3(Q3(:,3) == 1,1)
+    
+    //nb requetes entrées = nb requetes sorties
+    Q_e1 = Q_re1(1:l_s1,1)
+    Q_e2 = Q_re2(1:l_s2,1)
+    Q_e3 = Q_re3(1:l_s3,1)
+    
+    //temps sortie - temps entrée 
+    t_e1 = Q_s1 - Q_e1
+    t_e2 = Q_s2 - Q_e2
+    t_e3 = Q_s3 - Q_e3
+    
+    //temps moyen requete par serveur
+    t1 = mean(t_e1)
+    t2 = mean(t_e2)
+    t3 = mean(t_e3)
+endfunction
+
+
+t_rm = texecut(Q1,Q2,Q3)
+
+// nombre de requetes dans le système
+
+function nb_r = calculrequete(Tmax, lambda)
+    tia_moyen = 1/lambda
+    nb_r = Tmax/tia_moyen
+endfunction
+nb_r = calculrequete(3600, 1/3)

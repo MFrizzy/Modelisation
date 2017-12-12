@@ -1,0 +1,33 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Etude de la file M/M/1}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Conception d'une repr\IeC {\'e}sentation informatique}{3}{subsection.1.1}
+\contentsline {paragraph}{}{3}{section*.2}
+\contentsline {paragraph}{}{3}{section*.3}
+\contentsline {subsection}{\numberline {1.2}Conception et d\IeC {\'e}veloppement d'un algorithme de simulation en scilab}{3}{subsection.1.2}
+\contentsline {paragraph}{}{3}{section*.4}
+\contentsline {paragraph}{}{4}{section*.5}
+\contentsline {subsection}{\numberline {1.3}Simulation de trajectoires}{4}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Simulation de l'\IeC {\'e}volution d'un file d'attente}{4}{subsubsection.1.3.1}
+\contentsline {paragraph}{}{4}{section*.6}
+\contentsline {subsubsection}{\numberline {1.3.2}Distribution statistiques de la taille de la file d'attente}{4}{subsubsection.1.3.2}
+\contentsline {paragraph}{}{4}{section*.7}
+\contentsline {paragraph}{}{5}{section*.8}
+\contentsline {subsubsection}{\numberline {1.3.3}Temps de service sup\IeC {\'e}rieur en moyenne aux temps inter-arriv\IeC {\'e}es}{5}{subsubsection.1.3.3}
+\contentsline {paragraph}{Param\IeC {\`e}tre : $n=60$ ; $lambda=0.5$ ; $mu=0.2$}{5}{section*.9}
+\contentsline {subsubsection}{\numberline {1.3.4}Temps de service inf\IeC {\'e}rieur en moyenne aux temps inter-arriv\IeC {\'e}es}{6}{subsubsection.1.3.4}
+\contentsline {paragraph}{Param\IeC {\`e}tre : $n=60$ ; $lambda=0.2$ ; $mu=0.5$}{6}{section*.10}
+\contentsline {subsubsection}{\numberline {1.3.5}Temps de service \IeC {\'e}gaux en moyenne aux temps inter-arriv\IeC {\'e}es}{7}{subsubsection.1.3.5}
+\contentsline {paragraph}{Param\IeC {\`e}tre : $n=60$ ; $lambda=0.5$ ; $mu=0.5$}{7}{section*.11}
+\contentsline {section}{\numberline {2}Etude de la file \IeC {\`a} 3 serveurs}{8}{section.2}
+\contentsline {subsection}{\numberline {2.1}Simulation de strat\IeC {\'e}gie circulaire}{8}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Etude num\IeC {\'e}rique du temps de travers\IeC {\'e}e du syst\IeC {\`e}me pour une requ\IeC {\^e}te}{8}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Etude num\IeC {\'e}rique du nombre de requ\IeC {\^e}tes dans le syst\IeC {\`e}me}{8}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Recherche d'un r\IeC {\'e}gime stationnaire}{8}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Simulation de la strat\IeC {\'e}gie d'affection al\IeC {\'e}atoire proportionnelle}{8}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Simulation}{8}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Etude num\IeC {\'e}rique}{8}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Autres strat\IeC {\'e}gies, al\IeC {\'e}atoires ou/et d\IeC {\'e}t\IeC {\'e}rministes}{8}{subsection.2.3}
+\contentsline {section}{\numberline {3}Conclusion}{8}{section.3}
+\contentsline {paragraph}{}{8}{section*.12}
+\contentsline {section}{\numberline {A}}{9}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}}{9}{subsection.A.1}

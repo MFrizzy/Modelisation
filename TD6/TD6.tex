@@ -3,10 +3,10 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
+\usepackage[french]{babel}
 \usepackage{hyperref}
 \usepackage{amsmath,amsfonts,amssymb}
-\usepackage{Tkz-Tab}
+%\usepackage{Tkz-Tab}
 \usepackage{wrapfig}
 \usepackage{verbatim}
 \usepackage{array}
@@ -31,6 +31,7 @@
 \newpage
 
 \section{Etude de la file M/M/1}
+
 
 \subsection{Conception d'une représentation informatique}
 \paragraph{}
@@ -112,6 +113,8 @@ endfunction
 \end{verbatim}
 
 \subsection{Simulation de trajectoires}
+
+\subsubsection{Simulation de l'évolution d'un file d'attente}
 \paragraph{}
 Pour simuler les différentes trajectoires, on va utiliser une fonction Scilab $traj(n,lambda,mu)$ où :
 \begin{itemize}
@@ -128,23 +131,94 @@ function traj(n,lambda,mu)
 endfunction
 \end{verbatim}
 
-\subsubsection{Temps de service inférieur en moyenne aux temps inter-arrivées}
-\begin{center}
-\includegraphics[width=425px]{img/inf.png}
-\end{center}
-\paragraph{Paramètre : $n=60$ ; $lambda=0.5$ ; $mu=0.2$}
+\subsubsection{Distribution statistiques de la taille de la file d'attente}
+\paragraph{}
+Pour avoir la distribution statistique de des trajectoires, on va utiliser une fonction Scilab $distrib(n,lambda,mu)$ où :
+\begin{itemize}
+	\item n : correspondant à l'instant maximal de la représentation de la file
+	\item lambda : $\lambda$ correspondant aux temps inter-arrivées
+	\item mu :  $\lambda$ correspondant aux temps de service
+\end{itemize}
+\begin{verbatim}
+function Qi=distrib(n,lambda,mu)
+	Qi = zeros(500, 1);
+	for i=1:500
+		Q = queue(n, lambda, mu);
+		Qi(i) = Q($, 2);
+	end
+	distr = tabul(Qi,'i')
+	bar(distr(:,1),distr(:,2)/500)
+	legend("Distribution de Q"+string(n))
+endfunction
+\end{verbatim}
+\paragraph{}
+Lorsque l'amplitude sera très grande, on optera plutôt pour une autre version de cette fonction $distribv2(n,lambda,mu)$: 
+\begin{verbatim}
+function Qi=distribv2(n,lambda,mu)
+	Qi = zeros(500, 1);
+	for i=1:500
+		Q = queue(n, lambda, mu);
+		Qi(i) = Q($, 2);
+	end
+	histplot(20,Qi)
+	legend("Distribution de Q"+string(n))
+endfunction
+\end{verbatim}
 
 \subsubsection{Temps de service supérieur en moyenne aux temps inter-arrivées}
+\paragraph{Paramètre : $n=60$ ; $lambda=0.5$ ; $mu=0.2$}
 \begin{center}
-\includegraphics[width=425px]{img/sup.png}
+	\includegraphics[width=425px]{img/inf.PNG}
 \end{center}
-\paragraph{Paramètre : $n=60$ ; $lambda=0.2$ ; $mu=0.5$}
+\begin{center}
+	\includegraphics[width=425px]{img/sup/dist.png}
+\end{center}
+\begin{center}
+	\begin{tabular}{c||c||c}
+		& Q60 & Q120 \\
+		\hline \hline
+		mean() & 18.54 & 36.806 \\
+		\hline \hline
+		variance() & 40.212826 & 81.158681 \\
+	\end{tabular}
+\end{center}
 
-\subsubsection{Temps de service égal en moyenne aux temps inter-arrivées}
+\subsubsection{Temps de service inférieur en moyenne aux temps inter-arrivées}
+\paragraph{Paramètre : $n=60$ ; $lambda=0.2$ ; $mu=0.5$}
 \begin{center}
-\includegraphics[width=425px]{img/egal.png}
+	\includegraphics[width=425px]{img/sup.PNG}
 \end{center}
+\begin{center}
+	\includegraphics[width=425px]{img/inf/dist.png}
+\end{center}
+\begin{center}
+	\begin{tabular}{c||c||c}
+		& Q60 & Q120 \\
+		\hline \hline
+		mean() & 0.582 & 0.704 \\
+		\hline \hline
+		variance() & 0.9611984 & 1.1787415 \\
+	\end{tabular}
+\end{center}
+
+\subsubsection{Temps de service égaux en moyenne aux temps inter-arrivées}
 \paragraph{Paramètre : $n=60$ ; $lambda=0.5$ ; $mu=0.5$}
+\begin{center}
+	\includegraphics[width=425px]{img/egal.PNG}
+\end{center}
+\begin{center}
+	\includegraphics[width=425px]{img/egal/dist.png}
+\end{center}
+\begin{center}
+	\begin{tabular}{c||c||c}
+		& Q60 & Q120 \\
+		\hline \hline
+		mean() & 5.726 & 8.476 \\
+		\hline \hline
+		variance() & 24.792509 & 46.350124 \\
+	\end{tabular}
+\end{center}
+
 
 \section{Etude de la file à 3 serveurs}
 
