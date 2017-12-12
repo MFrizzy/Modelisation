@@ -20,14 +20,17 @@
 \contentsline {paragraph}{Param\IeC {\`e}tre : $n=60$ ; $lambda=0.5$ ; $mu=0.5$}{7}{section*.11}
 \contentsline {section}{\numberline {2}Etude de la file \IeC {\`a} 3 serveurs}{8}{section.2}
 \contentsline {subsection}{\numberline {2.1}Simulation de strat\IeC {\'e}gie circulaire}{8}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Etude num\IeC {\'e}rique du temps de travers\IeC {\'e}e du syst\IeC {\`e}me pour une requ\IeC {\^e}te}{8}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Etude num\IeC {\'e}rique du nombre de requ\IeC {\^e}tes dans le syst\IeC {\`e}me}{8}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Recherche d'un r\IeC {\'e}gime stationnaire}{8}{subsubsection.2.1.3}
-\contentsline {subsection}{\numberline {2.2}Simulation de la strat\IeC {\'e}gie d'affection al\IeC {\'e}atoire proportionnelle}{8}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Simulation}{8}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Etude num\IeC {\'e}rique}{8}{subsubsection.2.2.2}
-\contentsline {subsection}{\numberline {2.3}Autres strat\IeC {\'e}gies, al\IeC {\'e}atoires ou/et d\IeC {\'e}t\IeC {\'e}rministes}{8}{subsection.2.3}
-\contentsline {section}{\numberline {3}Conclusion}{8}{section.3}
 \contentsline {paragraph}{}{8}{section*.12}
-\contentsline {section}{\numberline {A}}{9}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}}{9}{subsection.A.1}
+\contentsline {paragraph}{Simulation sur 1 heure}{9}{section*.13}
+\contentsline {paragraph}{Simulation sur 30 heures}{10}{section*.14}
+\contentsline {subsubsection}{\numberline {2.1.1}Etude num\IeC {\'e}rique du temps de travers\IeC {\'e}e du syst\IeC {\`e}me pour une requ\IeC {\^e}te}{10}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Etude num\IeC {\'e}rique du nombre de requ\IeC {\^e}tes dans le syst\IeC {\`e}me}{10}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Recherche d'un r\IeC {\'e}gime stationnaire}{10}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Simulation de la strat\IeC {\'e}gie d'affection al\IeC {\'e}atoire proportionnelle}{10}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Simulation}{10}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Etude num\IeC {\'e}rique}{10}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Autres strat\IeC {\'e}gies, al\IeC {\'e}atoires ou/et d\IeC {\'e}t\IeC {\'e}rministes}{10}{subsection.2.3}
+\contentsline {section}{\numberline {3}Conclusion}{10}{section.3}
+\contentsline {paragraph}{}{10}{section*.15}
+\contentsline {section}{\numberline {A}}{11}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}}{11}{subsection.A.1}
