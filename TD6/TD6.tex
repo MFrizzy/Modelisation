@@ -339,11 +339,90 @@ Les résultats peuvent varier, mais sont proches de ces résultats :
 \end{center}
 
 \subsubsection{Etude numérique du nombre de requêtes dans le système}
+
+\begin{center}
+	\includegraphics[width=425px]{img/tls.png}
+\end{center}
+
 \subsubsection{Recherche d'un régime stationnaire}
 
 \subsection{Simulation de la stratégie d'affection aléatoire proportionnelle}
 \subsubsection{Simulation}
-\subsubsection{Etude numérique}
+
+\paragraph{}
+Pour simuler la stratégie d'affectation aléatoire proportionnelle, on utilise la fonction $aleaProp(Tmax,lambda,mu)$ où :
+\begin{itemize}
+	\item \textbf{Tmax} : Durée en seconde de la simulation
+	\item \textbf{lambda} : $\lambda$ correspondant aux temps inter-arrivées
+	\item \textbf{mu} : vecteur contenant les $\lambda$ correspondant aux temps de service des 3 serveurs
+\end{itemize}
+\begin{verbatim}
+function [Q1, Q2, Q3] = aleaProp(Tmax, lambda, mu)
+    Q1 = [0, 0, 0]; Q2 = Q1; Q3 = Q1;
+    i = 0;
+    ta = 0;
+    while (ta < Tmax)
+        ia = randExp(1, lambda)
+        i = i+1
+        ta = ta + ia 
+        nq = num_serv() 
+        ts = randExp(1, mu(nq))
+        select nq
+        case 1
+            Q1 = insere(Q1, ta, ts)
+        case 2 
+            Q2 = insere(Q2, ta, ts)
+        else
+            Q3 = insere(Q3, ta, ts)
+        end
+    end
+    Q1 = Q1(Q1(:,1)<Tmax,:)
+    Q2 = Q2(Q2(:,1)<Tmax,:) 
+    Q3 = Q3(Q3(:,1)<Tmax,:) 
+endfunction 
+\end{verbatim}
+
+\paragraph{}
+Dans la fonction précédente, on utilise la fonction suivante : $num\_serv()$, qui génére le numéro de serveur à allouer généré aléatoirement de manière proportionnelle aux temps de service des différents serveurs.
+
+\begin{verbatim}
+function nq = num_serv()
+u = rand()
+if u < 0.2 then
+nq = 1
+elseif u < 0.5
+nq = 2
+else
+nq = 3
+end
+endfunction
+\end{verbatim}
+
+\paragraph{Résultats}
+\begin{center}
+	\includegraphics[width=425px]{img/aleaProp.png}
+\end{center}
+
+\paragraph{Représentation de l'évolution des files d'attente pendant 20 heures}
+\begin{center}
+	\includegraphics[width=425px]{img/alea20h.png}
+\end{center}
+
+\subsubsection{Etude numérique du temps de traversée du système pour une requête}
+
+\paragraph{Résultats pour une simulation}
+Les résultats peuvent varier, mais sont proches de ces résultats :
+\begin{center}
+	\begin{tabular}{c|ccc|c}
+		\hline \hline
+		& Serveur 1 & Serveur 2 & Serveur 3 & Tous \\
+		\hline
+		moyenne & 182.58103 & 101.34571 & 115.17009 & 133.03228 \\
+		\hline \hline
+	\end{tabular}
+\end{center}
+\paragraph{}
+On remarque que les résultats semblent plus équilibrés, et que les serveurs sont généralement mieux utilisés qu'avec la stratégie circulaire.
 
 \subsection{Autres stratégies, aléatoires ou/et détérministes}
 
@@ -353,10 +432,10 @@ Les résultats peuvent varier, mais sont proches de ces résultats :
 \newpage
 \appendix
 
-\section{Fonctions}
-
-\subsection{}
-\begin{verbatim}
-\end{verbatim}
-
+%\section{Fonctions}
+%
+%\subsection{}
+%\begin{verbatim}
+%\end{verbatim}
+%
 \end{document}

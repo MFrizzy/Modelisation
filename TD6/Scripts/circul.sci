@@ -84,3 +84,29 @@ function nb_r = calculrequete(Tmax, lambda)
     nb_r = Tmax/tia_moyen
 endfunction
 nb_r = calculrequete(3600, 1/3)
+
+// nbr requetes
+
+Q=[Q1;Q2;Q3]//Q la jointure des trois file d’attente
+Qt=[0,0,0]
+Qt=gsort(Q,'r','i')//Qt colonne 1 récupére le temps trié par ordre croissant
+
+total=0;
+for i=1:length(Q(:,1))
+    Qt(i,2)=total;//mise à jour du nombre de requête dans la file d’attente au temps de la ligne i
+    [a,b]=find(Q(:,1)==Qt(i,1),1);// a, l’indice de la ligne où le temps de la requête de Qt à la ligne i est le même que Q
+    increment=Q(a,3);//on récupère l’incrément (arrivé ou départ d’une requête) 1 ou -1
+    Qt(i,3)=increment;//on réassocier l’incrément à son temps
+    total=total+increment//on met à jour le nombre de requête dans la file d’attente
+end
+
+plot2d(Qt(:,1), Qt(:,2), style = 5)
+
+legend("Serveur 1","Serveur 2","Serveur 3", "Tous les serveurs")
+
+
+
+
+
+
+
