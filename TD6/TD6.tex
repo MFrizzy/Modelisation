@@ -354,6 +354,7 @@ Les résultats peuvent varier, mais sont proches de ces résultats :
 \begin{center}
 	\includegraphics[width=425px]{img/tls.png}
 \end{center}
+\hyperref[tls]{Lien vers le code}
 
 \subsubsection{Recherche d'un régime stationnaire}
 
@@ -403,14 +404,14 @@ Dans la fonction précédente, on utilise la fonction suivante : $num\_serv()$, 
 
 \begin{verbatim}
 function nq = num_serv()
-u = rand()
-if u < 0.2 then
-nq = 1
-elseif u < 0.5
-nq = 2
-else
-nq = 3
-end
+    u = rand()
+    if u < 0.2 then
+        nq = 1
+    elseif u < 0.5
+        nq = 2
+    else
+        nq = 3
+    end
 endfunction
 \end{verbatim}
 
@@ -439,6 +440,8 @@ Les résultats peuvent varier, mais sont proches de ces résultats :
 \end{center}
 \paragraph{}
 On remarque que les résultats semblent plus équilibrés, et que les serveurs sont généralement mieux utilisés qu'avec la stratégie circulaire.
+
+\subsubsection{Etude numérique du nombre de requêtes dans le système}
 
 \subsection{Autres stratégies, aléatoires ou/et déterministes}
 
@@ -579,10 +582,29 @@ endfunction
 \newpage
 \appendix
 
-%\section{Fonctions}
+\section{Stratégie circulaire - Etude numérique du nombre de requêtes dans le système}\label{tls}
 %
 %\subsection{}
-%\begin{verbatim}
-%\end{verbatim}
+\begin{verbatim}
+plot2d(Q1(:,1), Q1(:,2), style= 1)
+plot2d(Q2(:,1), Q2(:,2), style= 2)
+plot2d(Q3(:,1), Q3(:,2), style= 3)
+
+Q=[Q1;Q2;Q3]
+Qt=[0,0,0]
+Qt=gsort(Q,'r','i')
+total=0;
+for i=1:length(Q(:,1))
+Qt(i,2)=total;
+[a,b]=find(Q(:,1)==Qt(i,1),1);
+increment=Q(a,3);
+Qt(i,3)=increment;
+total=total+increment
+end
+
+plot2d(Qt(:,1), Qt(:,2), style = 5)
+
+legend("Serveur 1","Serveur 2","Serveur 3", "Tous les serveurs")
+\end{verbatim}
 %
 \end{document}
