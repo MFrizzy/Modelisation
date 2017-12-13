@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6530) (preloaded format=pdflatex 2017.12.9)  13 DEC 2017 08:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6530) (preloaded format=pdflatex 2017.12.9)  13 DEC 2017 12:08
 entering extended mode
 **./TD6.tex
 (TD6.tex
@@ -721,74 +721,20 @@ Overfull \hbox (34.52385pt too wide) in paragraph at lines 60--60
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 67.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Overfull \hbox (17.16156pt too wide) in paragraph at lines 70--70
-[]        \T1/cmtt/m/n/10 q($+1,:) = [ta, 1, 1]; // ajout de la requête en fin 
-de liste[] 
- []
-
-
-Overfull \hbox (1.4154pt too wide) in paragraph at lines 72--72
-[]        \T1/cmtt/m/n/10 ind = sum(q(:, 1) < ta); // recherche du point d'inse
-rtion[] 
- []
-
-
-Overfull \hbox (48.65387pt too wide) in paragraph at lines 73--73
-[]        \T1/cmtt/m/n/10 q(ind+2:$+1, :) = q(ind+1:$, :); // création d'un tro
-u pour insérer[] 
- []
-
-
-Overfull \hbox (6.66412pt too wide) in paragraph at lines 74--74
-[]        \T1/cmtt/m/n/10 q(ind+1,:) = [ta, q(ind,2), 1]; // insertion au bon e
-ndroit[] 
- []
-
-
-Overfull \hbox (22.41028pt too wide) in paragraph at lines 75--75
-[]        \T1/cmtt/m/n/10 q(ind+1:$,2) = q(ind+1:$,2) + 1; // correction de la 
-taille de[] 
- []
-
-
-Overfull \hbox (59.1513pt too wide) in paragraph at lines 76--76
-[]                                         \T1/cmtt/m/n/10 // la file pour les 
-lignes suivantes[] 
- []
-
-
-Overfull \hbox (85.3949pt too wide) in paragraph at lines 81--81
-[]    \T1/cmtt/m/n/10 q($+1, :) = [s, q($, 2) - 1, -1]; // inscription de la da
-te de sortie à la fin[] 
- []
-
-[3]
-Overfull \hbox (27.659pt too wide) in paragraph at lines 105--105
-[]        \T1/cmtt/m/n/10 t_ia=randExp(1,lambda); // tirage de l'intervalle int
-er-arrivée[] 
- []
-
-
-Overfull \hbox (32.90771pt too wide) in paragraph at lines 111--111
-[]    \T1/cmtt/m/n/10 a = Q (Q(:,1)<Tmax,:) // on renvoie l'état de la file à l
-a date Tmax[] 
- []
-
-
-Overfull \hbox (32.90771pt too wide) in paragraph at lines 128--128
+) [3]
+Overfull \hbox (32.90771pt too wide) in paragraph at lines 124--124
 []        \T1/cmtt/m/n/10 Q = queue(n, lambda, mu); // lambda est 5 fois plus g
 rand que mu[] 
  []
 
 
-Overfull \hbox (27.659pt too wide) in paragraph at lines 129--129
+Overfull \hbox (27.659pt too wide) in paragraph at lines 125--125
 []        \T1/cmtt/m/n/10 plot2d2(Q(:,1), max(Q(:,2) - 1, 0), style=2) // trace
  la courbe[] 
  []
 
 [4]
-Overfull \hbox (7.10152pt too wide) in paragraph at lines 168--168
+Overfull \hbox (7.10152pt too wide) in paragraph at lines 164--164
 []\T1/cmr/bx/n/10 Temps de service supérieur en moyenne aux temps inter-arrivée
 s 
  []
@@ -796,25 +742,25 @@ s
 <img/inf.PNG, id=147, 1184.17406pt x 604.50844pt>
 File: img/inf.PNG Graphic file (type png)
  <use img/inf.PNG>
-Package pdftex.def Info: img/inf.PNG used on input line 171.
+Package pdftex.def Info: img/inf.PNG used on input line 167.
 (pdftex.def)             Requested size: 426.5953pt x 217.77045pt.
 
-Overfull \hbox (81.5953pt too wide) in paragraph at lines 171--172
+Overfull \hbox (81.5953pt too wide) in paragraph at lines 167--168
  [] 
  []
 
 <img/sup/dist.png, id=149, 1778.645pt x 791.95876pt>
 File: img/sup/dist.png Graphic file (type png)
  <use img/sup/dist.png>
-Package pdftex.def Info: img/sup/dist.png used on input line 174.
+Package pdftex.def Info: img/sup/dist.png used on input line 170.
 (pdftex.def)             Requested size: 426.5953pt x 189.94106pt.
 
-Overfull \hbox (81.5953pt too wide) in paragraph at lines 174--175
+Overfull \hbox (81.5953pt too wide) in paragraph at lines 170--171
  [] 
  []
 
 [5 <./img/inf.PNG>]
-Overfull \hbox (2.56651pt too wide) in paragraph at lines 186--186
+Overfull \hbox (2.56651pt too wide) in paragraph at lines 183--183
 []\T1/cmr/bx/n/10 Temps de service inférieur en moyenne aux temps inter-arrivée
 s 
  []
@@ -822,20 +768,20 @@ s
 <img/sup.PNG, id=157, 1157.82562pt x 580.41844pt>
 File: img/sup.PNG Graphic file (type png)
  <use img/sup.PNG>
-Package pdftex.def Info: img/sup.PNG used on input line 189.
+Package pdftex.def Info: img/sup.PNG used on input line 186.
 (pdftex.def)             Requested size: 426.5953pt x 213.8481pt.
 
-Overfull \hbox (81.5953pt too wide) in paragraph at lines 189--190
+Overfull \hbox (81.5953pt too wide) in paragraph at lines 186--187
  [] 
  []
 
 <img/inf/dist.png, id=158, 1770.615pt x 787.94376pt>
 File: img/inf/dist.png Graphic file (type png)
  <use img/inf/dist.png>
-Package pdftex.def Info: img/inf/dist.png used on input line 192.
+Package pdftex.def Info: img/inf/dist.png used on input line 189.
 (pdftex.def)             Requested size: 426.5953pt x 189.83174pt.
 
-Overfull \hbox (81.5953pt too wide) in paragraph at lines 192--193
+Overfull \hbox (81.5953pt too wide) in paragraph at lines 189--190
  [] 
  []
 
@@ -843,25 +789,25 @@ Overfull \hbox (81.5953pt too wide) in paragraph at lines 192--193
 <img/egal.PNG, id=166, 1149.5447pt x 571.38469pt>
 File: img/egal.PNG Graphic file (type png)
  <use img/egal.PNG>
-Package pdftex.def Info: img/egal.PNG used on input line 207.
+Package pdftex.def Info: img/egal.PNG used on input line 205.
 (pdftex.def)             Requested size: 426.5953pt x 212.03676pt.
 
-Overfull \hbox (81.5953pt too wide) in paragraph at lines 207--208
+Overfull \hbox (81.5953pt too wide) in paragraph at lines 205--206
  [] 
  []
 
 <img/egal/dist.png, id=167, 1772.6225pt x 790.955pt>
 File: img/egal/dist.png Graphic file (type png)
  <use img/egal/dist.png>
-Package pdftex.def Info: img/egal/dist.png used on input line 210.
+Package pdftex.def Info: img/egal/dist.png used on input line 208.
 (pdftex.def)             Requested size: 426.5953pt x 190.35204pt.
 
-Overfull \hbox (81.5953pt too wide) in paragraph at lines 210--211
+Overfull \hbox (81.5953pt too wide) in paragraph at lines 208--209
  [] 
  []
 
 [7 <./img/inf/dist.png> <./img/egal.PNG>]
-Overfull \hbox (36.973pt too wide) in paragraph at lines 227--228
+Overfull \hbox (36.973pt too wide) in paragraph at lines 226--227
  [][] \T1/cmr/m/n/10 Pour simuler la stratégie circulaire, on va utiliser la fo
 nction $\OML/cmm/m/it/10 circul\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Tmax; lambda; 
 mu\OT1/cmr/m/n/10 )$
@@ -871,50 +817,43 @@ mu\OT1/cmr/m/n/10 )$
 <img/circul1h.png, id=182, 1534.73375pt x 797.98125pt>
 File: img/circul1h.png Graphic file (type png)
  <use img/circul1h.png>
-Package pdftex.def Info: img/circul1h.png used on input line 277.
+Package pdftex.def Info: img/circul1h.png used on input line 276.
 (pdftex.def)             Requested size: 426.5953pt x 221.8016pt.
 
-Overfull \hbox (81.5953pt too wide) in paragraph at lines 277--278
+Overfull \hbox (81.5953pt too wide) in paragraph at lines 276--277
  [] 
  []
 
 <img/circul30h.jpg, id=183, 1553.805pt x 800.9925pt>
 File: img/circul30h.jpg Graphic file (type jpg)
  <use img/circul30h.jpg>
-Package pdftex.def Info: img/circul30h.jpg used on input line 282.
+Package pdftex.def Info: img/circul30h.jpg used on input line 281.
 (pdftex.def)             Requested size: 426.5953pt x 219.91306pt.
 
-Overfull \hbox (81.5953pt too wide) in paragraph at lines 282--283
+Overfull \hbox (81.5953pt too wide) in paragraph at lines 281--282
  [] 
  []
 
-[9 <./img/circul1h.png>]
-Overfull \hbox (43.56326pt too wide) in paragraph at lines 290--290
+[9 <./img/circul1h.png>] [10 <./img/circul30h.jpg>]
+Overfull \hbox (43.56326pt too wide) in paragraph at lines 344--344
 []\T1/cmr/bx/n/12 Simulation de la stratégie d'affection aléatoire proportionne
 lle 
  []
 
-[10 <./img/circul30h.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 332.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 332.
+[11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 362.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 362.
  (TD6.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 332.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 332.
-
-
-Package rerunfilecheck Warning: File `TD6.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `TD6.out':
-(rerunfilecheck)             Before: 1D7CC7E7C08BFD8CED7B6D8648B96E49;1973
-(rerunfilecheck)             After:  78E64A821B155E8C3CC136CCEF6A53E0;2120.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 332.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 362.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 362.
+Package rerunfilecheck Info: File `TD6.out' has not changed.
+(rerunfilecheck)             Checksum: 9B143C41F2475AF8459EFBD431F2F36A;1982.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 362.
  ) 
 Here is how much of TeX's memory you used:
- 7800 strings out of 495223
- 109446 string characters out of 3181528
+ 7801 strings out of 495223
+ 109447 string characters out of 3181528
  199010 words of memory out of 3000000
  10910 multiletter control sequences out of 15000+200000
  17221 words of font info for 50 fonts, out of 3000000 for 9000
@@ -931,9 +870,9 @@ iktex/texmfs/install/fonts/type1/public/cm-super/sfrm1000.pfb></home/mfrizzy/.m
 iktex/texmfs/install/fonts/type1/public/cm-super/sfrm1200.pfb></home/mfrizzy/.m
 iktex/texmfs/install/fonts/type1/public/cm-super/sfrm1728.pfb></home/mfrizzy/.m
 iktex/texmfs/install/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on TD6.pdf (11 pages, 544570 bytes).
+Output written on TD6.pdf (12 pages, 543992 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
  209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

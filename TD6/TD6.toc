@@ -25,15 +25,15 @@
 \contentsline {paragraph}{Simulation sur 1 heure}{9}{section*.14}
 \contentsline {paragraph}{Simulation sur 30 heures}{10}{section*.15}
 \contentsline {subsubsection}{\numberline {2.1.1}Etude num\IeC {\'e}rique du temps de travers\IeC {\'e}e du syst\IeC {\`e}me pour une requ\IeC {\^e}te}{10}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Etude num\IeC {\'e}rique du nombre de requ\IeC {\^e}tes dans le syst\IeC {\`e}me}{10}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Recherche d'un r\IeC {\'e}gime stationnaire}{10}{subsubsection.2.1.3}
-\contentsline {subsection}{\numberline {2.2}Simulation de la strat\IeC {\'e}gie d'affection al\IeC {\'e}atoire proportionnelle}{10}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Simulation}{10}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Etude num\IeC {\'e}rique}{10}{subsubsection.2.2.2}
-\contentsline {subsection}{\numberline {2.3}Autres strat\IeC {\'e}gies, al\IeC {\'e}atoires ou/et d\IeC {\'e}t\IeC {\'e}rministes}{10}{subsection.2.3}
-\contentsline {section}{\numberline {3}Conclusion}{10}{section.3}
-\contentsline {paragraph}{}{10}{section*.16}
-\contentsline {section}{\numberline {A}Fonctions}{11}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}insere(q,ta,ts)}{11}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}randExp(n,lambda)}{11}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}}{11}{subsection.A.3}
+\contentsline {paragraph}{Outil de calcul}{10}{section*.16}
+\contentsline {paragraph}{R\IeC {\'e}sultats pour une simulation}{11}{section*.17}
+\contentsline {subsubsection}{\numberline {2.1.2}Etude num\IeC {\'e}rique du nombre de requ\IeC {\^e}tes dans le syst\IeC {\`e}me}{11}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Recherche d'un r\IeC {\'e}gime stationnaire}{11}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Simulation de la strat\IeC {\'e}gie d'affection al\IeC {\'e}atoire proportionnelle}{11}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Simulation}{11}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Etude num\IeC {\'e}rique}{11}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Autres strat\IeC {\'e}gies, al\IeC {\'e}atoires ou/et d\IeC {\'e}t\IeC {\'e}rministes}{11}{subsection.2.3}
+\contentsline {section}{\numberline {3}Conclusion}{11}{section.3}
+\contentsline {paragraph}{}{11}{section*.18}
+\contentsline {section}{\numberline {A}Fonctions}{12}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}}{12}{subsection.A.1}

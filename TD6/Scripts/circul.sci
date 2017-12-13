@@ -34,6 +34,10 @@ plot2d(Q1(:,1), Q1(:,2), style= 1)
 plot2d(Q2(:,1), Q2(:,2), style= 2)
 plot2d(Q3(:,1), Q3(:,2), style= 3)
 
+// Etudes des 3 files
+
+
+
 function [t1,t2,t3,t_mr] = texecute(Q1,Q2,Q3)
     //requetes sorties
     Q_s1 = Q1(Q1(:,3) == -1,1)

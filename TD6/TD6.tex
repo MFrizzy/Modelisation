@@ -66,20 +66,17 @@ Nous avons à notre disposition une fonction SciLab $insere(q, ta, ts)$ avec :
 \end{itemize}
 \begin{verbatim}
 function newq = insere(q, ta, ts)
-    if q($, 1) < ta then // aucune requête dans le système
-        q($+1,:) = [ta, 1, 1]; // ajout de la requête en fin de liste
-    else // inscription de la requête en file d'attente
-        ind = sum(q(:, 1) < ta); // recherche du point d'insertion
-        q(ind+2:$+1, :) = q(ind+1:$, :); // création d'un trou pour insérer
-        q(ind+1,:) = [ta, q(ind,2), 1]; // insertion au bon endroit
-        q(ind+1:$,2) = q(ind+1:$,2) + 1; // correction de la taille de
-                                         // la file pour les lignes suivantes
+    if q($, 1) < ta then 
+        q($+1,:) = [ta, 1, 1];
+    else
+        ind = sum(q(:, 1) < ta);
+        q(ind+2:$+1, :) = q(ind+1:$, :);
+        q(ind+1,:) = [ta, q(ind,2), 1];
+        q(ind+1:$,2) = q(ind+1:$,2) + 1;
     end
-    // Inscription du départ de la requête après son temps de
-    // service ts
-    s = q($, 1) + ts // calcul de la date de sortie
-    q($+1, :) = [s, q($, 2) - 1, -1]; // inscription de la date de sortie à la fin
-    newq = q // On renvoie la file ainsi modifiée
+    s = q($, 1) + ts 
+    q($+1, :) = [s, q($, 2) - 1, -1];
+    newq = q
 endfunction
 \end{verbatim}
 \paragraph{}
@@ -99,16 +96,15 @@ C'est à l'aide de ces deux fonctions citées plus haut que l'on peut définir l
 \end{itemize}
 \begin{verbatim}
 function a=queue(Tmax, lambda, mu)
-    Q = [0, 0, 0]; // Initialisation de la file
+    Q = [0, 0, 0];
     t = 0; // temps courant
     while (t < Tmax)
-        t_ia=randExp(1,lambda); // tirage de l'intervalle inter-arrivée
-        t=t+t_ia;// mise à jour de l'instannt courant : 
-                 // instant d'arrivée de la prochaine requête
-        ts=randExp(1,mu); // tirage de son temps de service
-        Q=insere(Q,t,ts);// insertion dans la file des évènements
+        t_ia=randExp(1,lambda);
+        t=t+t_ia;
+        ts=randExp(1,mu);
+        Q=insere(Q,t,ts);
     end
-    a = Q (Q(:,1)<Tmax,:) // on renvoie l'état de la file à la date Tmax
+    a = Q (Q(:,1)<Tmax,:)
 endfunction
 \end{verbatim}
 
@@ -174,12 +170,13 @@ endfunction
 	\includegraphics[width=425px]{img/sup/dist.png}
 \end{center}
 \begin{center}
-	\begin{tabular}{c||c||c}
+	\begin{tabular}{c|cc}
+		\hline \hline
 		& Q60 & Q120 \\
-		\hline \hline
+		\hline
 		mean() & 18.54 & 36.806 \\
-		\hline \hline
 		variance() & 40.212826 & 81.158681 \\
+		\hline \hline
 	\end{tabular}
 \end{center}
 
@@ -192,12 +189,13 @@ endfunction
 	\includegraphics[width=425px]{img/inf/dist.png}
 \end{center}
 \begin{center}
-	\begin{tabular}{c||c||c}
+	\begin{tabular}{c|cc}
+		\hline \hline
 		& Q60 & Q120 \\
-		\hline \hline
+		\hline
 		mean() & 0.582 & 0.704 \\
-		\hline \hline
 		variance() & 0.9611984 & 1.1787415 \\
+		\hline \hline
 	\end{tabular}
 \end{center}
 
@@ -210,12 +208,13 @@ endfunction
 	\includegraphics[width=425px]{img/egal/dist.png}
 \end{center}
 \begin{center}
-	\begin{tabular}{c||c||c}
+	\begin{tabular}{c|cc}
+		\hline \hline
 		& Q60 & Q120 \\
-		\hline \hline
+		\hline 
 		mean() & 5.726 & 8.476 \\
-		\hline \hline
 		variance() & 24.792509 & 46.350124 \\
+		\hline \hline
 	\end{tabular}
 \end{center}
 
@@ -259,19 +258,19 @@ endfunction
 \paragraph{}
 Dans cette fonction, on utilise 2 autres fonctions : 
 
-\begin{itemize}
-	\item $insere(q, ta, ts)$ où :
-	\begin{itemize}
-		\item \textbf{q} : File d'attente
-		\item \textbf{ta} : Instant d'arrivée de la requête
-		\item \textbf{ts} : Temps de service
-	\end{itemize}
-	\item $randExp(n, lambda) $
-	\begin{itemize}
-		\item \textbf{n} : taille du vecteur en sortie
-		\item \textbf{lambda} : $\lambda$ avec lequel sera générée la valeur aléatoire qui suit une loi exponentielle
-	\end{itemize}
-\end{itemize}
+%\begin{itemize}
+%	\item $insere(q, ta, ts)$ où :
+%	\begin{itemize}
+%		\item \textbf{q} : File d'attente
+%		\item \textbf{ta} : Instant d'arrivée de la requête
+%		\item \textbf{ts} : Temps de service
+%	\end{itemize}
+%	\item $randExp(n, lambda) $
+%	\begin{itemize}
+%		\item \textbf{n} : taille du vecteur en sortie
+%		\item \textbf{lambda} : $\lambda$ avec lequel sera générée la valeur aléatoire qui suit une loi exponentielle
+%	\end{itemize}
+%\end{itemize}
 
 \begin{center}
 	\includegraphics[width=425px]{img/circul1h.png}
@@ -284,6 +283,61 @@ Dans cette fonction, on utilise 2 autres fonctions :
 \paragraph{Simulation sur 30 heures}
 
 \subsubsection{Etude numérique du temps de traversée du système pour une requête}
+
+\paragraph{Outil de calcul}
+Pour calculer les temps de traversée du système, on a créé une fonction Scilab $texecute(Q1,Q2,Q3)$ où :
+\begin{itemize}
+	\item \textbf{Q1,Q2,Q3} : correspondent aux représentation des files 
+\end{itemize}
+\begin{verbatim}
+function [t1,t2,t3,t_mr] = texecute(Q1,Q2,Q3)
+    //requetes sorties
+    Q_s1 = Q1(Q1(:,3) == -1,1)
+    Q_s2 = Q2(Q2(:,3) == -1,1)
+    Q_s3 = Q3(Q3(:,3) == -1,1)
+
+    //length file d'attentes requetes sorties
+    l_s1 = length(Q_s1)
+    l_s2 = length(Q_s2)
+    l_s3 = length(Q_s3)
+
+    //requetes entrées
+    Q_re1 = Q1(Q1(:,3) == 1,1)
+    Q_re2 = Q2(Q2(:,3) == 1,1)
+    Q_re3 = Q3(Q3(:,3) == 1,1)
+
+    //nb requetes entrées = nb requetes sorties
+    Q_e1 = Q_re1(1:l_s1,1)
+    Q_e2 = Q_re2(1:l_s2,1)
+    Q_e3 = Q_re3(1:l_s3,1)
+
+    //temps sortie - temps entrée 
+    t_e1 = Q_s1 - Q_e1
+    t_e2 = Q_s2 - Q_e2
+    t_e3 = Q_s3 - Q_e3
+
+    //temps moyen requete par serveur
+    t1 = mean(t_e1)
+    t2 = mean(t_e2)
+    t3 = mean(t_e3)
+
+    //temps moyen systeme
+    t_mr = (t1+t2+t3)/3
+endfunction
+\end{verbatim}
+
+\paragraph{Résultats pour une simulation}
+Les résultats peuvent varier, mais sont proches de ces résultats :
+\begin{center}
+	\begin{tabular}{c|ccc|c}
+		\hline \hline
+		& Serveur 1 & Serveur 2 & Serveur 3 & Tous \\
+		\hline
+		moyenne & 820.60768 & 246.56614 & 12.08801 & 359.75394 \\
+		\hline \hline
+	\end{tabular}
+\end{center}
+
 \subsubsection{Etude numérique du nombre de requêtes dans le système}
 \subsubsection{Recherche d'un régime stationnaire}
 
@@ -300,30 +354,6 @@ Dans cette fonction, on utilise 2 autres fonctions :
 \appendix
 
 \section{Fonctions}
-
-\subsection{insere(q,ta,ts)}
-\begin{verbatim}
-function newq = insere(q, ta, ts)
-    if q($, 1) < ta then 
-        q($+1,:) = [ta, 1, 1];
-    else
-        ind = sum(q(:, 1) < ta);
-        q(ind+2:$+1, :) = q(ind+1:$, :);
-        q(ind+1,:) = [ta, q(ind,2), 1];
-        q(ind+1:$,2) = q(ind+1:$,2) + 1;
-    end
-    s = q($, 1) + ts 
-    q($+1, :) = [s, q($, 2) - 1, -1];
-    newq = q
-endfunction
-\end{verbatim}
-
-\subsection{randExp(n,lambda)}
-\begin{verbatim}
-function t = randExp(n, lambda)
-    t = -log(1 - rand(n,1)) / lambda
-endfunction
-\end{verbatim}
 
 \subsection{}
 \begin{verbatim}
