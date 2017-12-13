@@ -592,6 +592,16 @@ endfunction
 
 \section{Conclusion}
 \paragraph{}
+Finalement, nous avons étudié plusieurs stratégies différentes pour la gestion des serveurs et de l'attribution des requêtes: la stratégie circulaire, la stratégie aléatoire proportionnelle, la stratégie semi-circulaire et la stratégie d'évaluation de la file d'attente.
+Hormis la stratégie circulaire qui présente des très mauvais résultats, toutes les stratégies proposées présentent des résultats très corrects voire bons. 
+\paragraph{}
+La stratégie aléatoire proportionnelle a pour avantage d'être assez basique et simple à mettre en place, il suffit simplement de connaître le temps moyen de traitement d'une requête pour chaque serveur.
+\paragraph{}
+La stratégie semi-circulaire quant à elle demande plus de travail, en effet il faut d'abord déterminer empiriquement un patern qui présente des résultats théoriques satisfaisants, puis l'utiliser.
+\paragraph{}
+Enfin la stratégie d'évaluation de la file d'attente est celle-qui est la plus portable et adaptable, en effet elle ne nécessite aucune connaissance du système, hormis les temps de services et les temps inter-arrivés. 
+\paragraph{}
+Nous avons donc à notre disposition plusieurs solutions pour régler le problème initial de gestion des flux dans des serveurs, il ne nous reste plus qu'à déterminer laquelle nous préférons !
 
 \newpage
 \appendix
