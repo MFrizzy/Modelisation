@@ -355,6 +355,8 @@ Les résultats peuvent varier, mais sont proches de ces résultats :
 	\includegraphics[width=425px]{img/tls.png}
 \end{center}
 \hyperref[tls]{Lien vers le code}
+\paragraph{Résultat pour une simulation de 1 heure}
+Nous pouvons observer sur ce graphique que le nombre de requêtes dans le système ne cesse d'augmenter. Or le serveur 3 a une file d'attente stable et toujours inférieur à 10 et atteint 0 à certains moments. Cela signifie que le serveur n'est pas en surcharge de requêtes et donc le temps de traversée des requêtes dans le serveur 3 est assez stable. Nous pouvons presque en dire autant du serveur 2, malgré un début assez rude avec tout d'abord une augmentation puis une variation du nombre de requêtes dans sa file d'attente, a partir d'un certain temps le serveur stabilise son nombre d'entrées et de sorties des requêtes. Quant-au serveur 1 nous observons une augmentation continuelle de sa file d'attente. L'augmentation de la file d'attente globale des serveurs est donc du au serveur 1 qui a un taux d'entrée de requêtes trop fort par rapport à son temps d’exécution ce qui provoque un nombre d'entrées trop élevé par rapport au nombre de sorties.
 
 \subsubsection{Recherche d'un régime stationnaire}
 
