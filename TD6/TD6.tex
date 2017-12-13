@@ -447,7 +447,7 @@ On remarque que les résultats semblent plus équilibrés, et que les serveurs s
 	\includegraphics[width=425px]{img/aleatls.png}
 \end{center}
 \paragraph{Résultat pour une simulation sur 10 heures}
-On peut voir que les 3 serveurs ont une répartitions plutôt équilibrée quand au nombre de requêtes qu'elles doivent encore traiter. Malgré quelques irrégularités, cette stratégie est pour le moment celle qui semble être la plus efficace, on ne voit aucune tendance qui montrerait une croissance exponentielle du nombre de requêtes dans le système.  
+On peut voir que les 3 serveurs ont une répartitions plutôt équilibrée quant au nombre de requêtes qu'elles doivent encore traiter. Malgré quelques irrégularités, cette stratégie est pour le moment celle qui semble être la plus efficace, on ne voit aucune tendance qui montrerait une croissance exponentielle du nombre de requêtes dans le système.  
 
 \subsection{Autres stratégies, aléatoires ou/et déterministes}
 
@@ -577,10 +577,10 @@ function [Q1, Q2, Q3] = choix(Tmax, lambda, mu)
 endfunction
 \end{verbatim}
 
-\paragraph{Résultat de la simulation}
 \begin{center}
 	\includegraphics[width=425px]{img/choix.png}
 \end{center}
+\paragraph{Résultat de la simulation pour 1 heure} A partir de ce graphique, on peut voir que les 3 courbes sont toujours très proches durant toute la simulation, en effet chaque serveur possède à peu près le même nombre de requêtes en attente que les autres. On considère cette stratégie comme étant celle qui permet de garantir le mieux une non explosion du nombres de requêtes dans le système.
 
 \section{Conclusion}
 \paragraph{}

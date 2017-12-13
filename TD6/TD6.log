@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6530) (preloaded format=pdflatex 2017.12.9)  13 DEC 2017 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6530) (preloaded format=pdflatex 2017.12.9)  13 DEC 2017 23:14
 entering extended mode
 **./TD6.tex
 (TD6.tex
@@ -926,17 +926,17 @@ Overfull \hbox (127.38464pt too wide) in paragraph at lines 557--557
  qui a le plus petit résultat[] 
  []
 
-[18] <img/choix.png, id=273, 1519.6775pt x 780.9175pt>
+<img/choix.png, id=267, 1519.6775pt x 780.9175pt>
 File: img/choix.png Graphic file (type png)
  <use img/choix.png>
-Package pdftex.def Info: img/choix.png used on input line 582.
+Package pdftex.def Info: img/choix.png used on input line 581.
 (pdftex.def)             Requested size: 426.5953pt x 219.21545pt.
 
-Overfull \hbox (81.5953pt too wide) in paragraph at lines 582--583
+Overfull \hbox (81.5953pt too wide) in paragraph at lines 581--582
  [] 
  []
 
-[19 <./img/choix.png>]
+[18] [19 <./img/choix.png>]
 Overfull \hbox (18.98447pt too wide) in paragraph at lines 591--591
 []\T1/cmr/bx/n/14.4 Stratégie circulaire - Etude numérique du nombre
  []
@@ -958,7 +958,7 @@ Here is how much of TeX's memory you used:
  10937 multiletter control sequences out of 15000+200000
  17221 words of font info for 50 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 30i,10n,30p,434b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,10n,30p,439b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/mfrizzy/.miktex/texmfs/install/fonts/enc/dvips/cm-super/cm-super-t1.en
 c}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
@@ -970,7 +970,7 @@ iktex/texmfs/install/fonts/type1/public/cm-super/sfrm1000.pfb></home/mfrizzy/.m
 iktex/texmfs/install/fonts/type1/public/cm-super/sfrm1200.pfb></home/mfrizzy/.m
 iktex/texmfs/install/fonts/type1/public/cm-super/sfrm1728.pfb></home/mfrizzy/.m
 iktex/texmfs/install/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on TD6.pdf (20 pages, 808358 bytes).
+Output written on TD6.pdf (20 pages, 808722 bytes).
 PDF statistics:
  339 PDF objects out of 1000 (max. 8388607)
  83 named destinations out of 1000 (max. 500000)
