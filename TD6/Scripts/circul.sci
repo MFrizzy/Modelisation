@@ -9,7 +9,7 @@ function [Q1, Q2, Q3] = circul(Tmax, lambda, mu)
         ia = randExp(1, lambda) 
         i = i+1 
         ta = ta + ia
-        nq = modulo(i, 3) + 1
+        nq = 
         ts = randExp(1, mu(nq))
         select nq 
         case 1.
@@ -19,7 +19,6 @@ function [Q1, Q2, Q3] = circul(Tmax, lambda, mu)
         else
             Q3 = insere(Q3, ta, ts)
         end
-        // 
     end
     Q1 = Q1(Q1(:,1)<Tmax,:)
     Q2 = Q2(Q2(:,1)<Tmax,:) 

@@ -424,7 +424,76 @@ Les résultats peuvent varier, mais sont proches de ces résultats :
 \paragraph{}
 On remarque que les résultats semblent plus équilibrés, et que les serveurs sont généralement mieux utilisés qu'avec la stratégie circulaire.
 
-\subsection{Autres stratégies, aléatoires ou/et détérministes}
+\subsection{Autres stratégies, aléatoires ou/et déterministes}
+
+\subsubsection{Stratégie semi-circulaire}
+\begin{center}
+	\includegraphics[width=425px]{img/semiCirculaire.png}
+\end{center}
+
+\begin{tabular}{c|ccc}
+	\hline \hline
+	Choix du serveur & Temps restants S1 & Temps restants S3 & Temps restant S2 \\
+	\hline 
+	1 & 15 \\
+	3 & 12 & 6 \\
+	2 & 9 & 3 & 10 \\
+	3 & 6 & 6 & 7 \\
+	3 & 3 & 9 & 4 \\
+	1 & 15 & 6 & 1 \\
+	2 & 12 & 3 & 10 \\
+	3 & 9 & 6 & 7 \\
+	3 & 6 & 9 & 4 \\
+	2 & 3 & 6 & 11 \\
+	\hline
+	1 & 15 & 3 & 8 \\
+	3 & 12 & 6 & 5 \\
+	2 & 9 & 3 & 12 \\
+	3 & 6 & 6 & 9 \\
+	3 & 3 & 3 & 6 \\
+	1 & 15 & 0 & 3 \\
+	2 & 12 & 0 & 10 \\
+	3 & 9 & 6 & 7 \\
+	3 & 6 & 9 & 4 \\
+	2 & 3 & 6 & 11 \\
+	\hline
+	1 & 15 & 3 & 8 \\
+	\hline \hline
+\end{tabular}
+
+\paragraph{}
+Après etude, on remarque une suite récurrente dans l'affectation aux serveur le plus adéquat :
+
+\begin{center}
+	$[1,3,2,3,3,1,2,3,3,2]$
+\end{center}
+\paragraph{}On obtient donc la fonction suivante $ $:
+\begin{verbatim}
+function [Q1, Q2, Q3] = semicircul(Tmax, lambda, mu)
+    Q1 = [0, 0, 0]; Q2 = Q1; Q3 = Q1;
+    tab=[1,3,2,3,3,1,2,3,3,2];  
+    ta = 0;
+    while (ta < Tmax)
+        for i=1:10
+            nq=tab(i);
+            ia = randExp(1, lambda) 
+            ta = ta + ia 
+            ts = randExp(1, mu(nq)) 
+            select nq 
+            case 1 
+                Q1 = insere(Q1, ta, ts)
+            case 2
+                Q2 = insere(Q2, ta, ts)
+            else
+                Q3 = insere(Q3, ta, ts)
+            end
+        end
+    end
+    Q1 = Q1(Q1(:,1)<Tmax,:)
+    Q2 = Q2(Q2(:,1)<Tmax,:) 
+    Q3 = Q3(Q3(:,1)<Tmax,:) 
+endfunction 
+\end{verbatim}
 
 \section{Conclusion}
 \paragraph{}
