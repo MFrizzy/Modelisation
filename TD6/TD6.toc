@@ -14,38 +14,45 @@
 \contentsline {paragraph}{}{5}{section*.8}
 \contentsline {subsubsection}{\numberline {1.3.3}Temps de service sup\IeC {\'e}rieur en moyenne aux temps inter-arriv\IeC {\'e}es}{5}{subsubsection.1.3.3}
 \contentsline {paragraph}{Param\IeC {\`e}tre : $n=60$ ; $lambda=0.5$ ; $mu=0.2$}{5}{section*.9}
+\contentsline {paragraph}{}{5}{section*.10}
+\contentsline {paragraph}{}{6}{section*.11}
 \contentsline {subsubsection}{\numberline {1.3.4}Temps de service inf\IeC {\'e}rieur en moyenne aux temps inter-arriv\IeC {\'e}es}{6}{subsubsection.1.3.4}
-\contentsline {paragraph}{Param\IeC {\`e}tre : $n=60$ ; $lambda=0.2$ ; $mu=0.5$}{6}{section*.10}
-\contentsline {subsubsection}{\numberline {1.3.5}Temps de service \IeC {\'e}gaux en moyenne aux temps inter-arriv\IeC {\'e}es}{7}{subsubsection.1.3.5}
-\contentsline {paragraph}{Param\IeC {\`e}tre : $n=60$ ; $lambda=0.5$ ; $mu=0.5$}{7}{section*.11}
-\contentsline {section}{\numberline {2}Etude de la file \IeC {\`a} 3 serveurs}{8}{section.2}
-\contentsline {subsection}{\numberline {2.1}Simulation de strat\IeC {\'e}gie circulaire}{8}{subsection.2.1}
-\contentsline {paragraph}{}{8}{section*.12}
-\contentsline {paragraph}{}{9}{section*.13}
-\contentsline {paragraph}{Simulation sur 1 heure}{9}{section*.14}
-\contentsline {paragraph}{Simulation sur 30 heures}{10}{section*.15}
-\contentsline {subsubsection}{\numberline {2.1.1}Etude num\IeC {\'e}rique du temps de travers\IeC {\'e}e du syst\IeC {\`e}me pour une requ\IeC {\^e}te}{10}{subsubsection.2.1.1}
-\contentsline {paragraph}{Outil de calcul}{10}{section*.16}
-\contentsline {paragraph}{R\IeC {\'e}sultats pour une simulation}{11}{section*.17}
-\contentsline {subsubsection}{\numberline {2.1.2}Etude num\IeC {\'e}rique du nombre de requ\IeC {\^e}tes dans le syst\IeC {\`e}me}{11}{subsubsection.2.1.2}
+\contentsline {paragraph}{Param\IeC {\`e}tre : $n=60$ ; $lambda=0.2$ ; $mu=0.5$}{6}{section*.12}
+\contentsline {paragraph}{}{7}{section*.13}
+\contentsline {subsubsection}{\numberline {1.3.5}Temps de service \IeC {\'e}gaux en moyenne aux temps inter-arriv\IeC {\'e}es}{8}{subsubsection.1.3.5}
+\contentsline {paragraph}{Param\IeC {\`e}tre : $n=60$ ; $lambda=0.5$ ; $mu=0.5$}{8}{section*.14}
+\contentsline {paragraph}{}{8}{section*.15}
+\contentsline {section}{\numberline {2}Etude de la file \IeC {\`a} 3 serveurs}{9}{section.2}
+\contentsline {subsection}{\numberline {2.1}Simulation de strat\IeC {\'e}gie circulaire}{9}{subsection.2.1}
+\contentsline {paragraph}{}{9}{section*.16}
+\contentsline {paragraph}{Simulation sur 1 heure}{10}{section*.17}
+\contentsline {paragraph}{Simulation sur 30 heures}{10}{section*.18}
+\contentsline {subsubsection}{\numberline {2.1.1}Etude num\IeC {\'e}rique du temps de travers\IeC {\'e}e du syst\IeC {\`e}me pour une requ\IeC {\^e}te}{11}{subsubsection.2.1.1}
+\contentsline {paragraph}{Outil de calcul}{11}{section*.19}
+\contentsline {paragraph}{R\IeC {\'e}sultats pour une simulation}{12}{section*.20}
+\contentsline {subsubsection}{\numberline {2.1.2}Etude num\IeC {\'e}rique du nombre de requ\IeC {\^e}tes dans le syst\IeC {\`e}me}{12}{subsubsection.2.1.2}
 \contentsline {subsubsection}{\numberline {2.1.3}Recherche d'un r\IeC {\'e}gime stationnaire}{12}{subsubsection.2.1.3}
+\contentsline {paragraph}{}{12}{section*.21}
+\contentsline {paragraph}{}{12}{section*.22}
 \contentsline {subsection}{\numberline {2.2}Simulation de la strat\IeC {\'e}gie d'affection al\IeC {\'e}atoire proportionnelle}{12}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Simulation}{12}{subsubsection.2.2.1}
-\contentsline {paragraph}{}{12}{section*.18}
-\contentsline {paragraph}{}{12}{section*.19}
-\contentsline {paragraph}{R\IeC {\'e}sultats}{13}{section*.20}
-\contentsline {paragraph}{Repr\IeC {\'e}sentation de l'\IeC {\'e}volution des files d'attente pendant 20 heures}{13}{section*.21}
+\contentsline {paragraph}{}{12}{section*.23}
+\contentsline {paragraph}{}{13}{section*.24}
+\contentsline {paragraph}{R\IeC {\'e}sultats}{13}{section*.25}
+\contentsline {paragraph}{Repr\IeC {\'e}sentation de l'\IeC {\'e}volution des files d'attente pendant 20 heures}{14}{section*.26}
 \contentsline {subsubsection}{\numberline {2.2.2}Etude num\IeC {\'e}rique du temps de travers\IeC {\'e}e du syst\IeC {\`e}me pour une requ\IeC {\^e}te}{14}{subsubsection.2.2.2}
-\contentsline {paragraph}{R\IeC {\'e}sultats pour une simulation}{14}{section*.22}
-\contentsline {paragraph}{}{14}{section*.23}
-\contentsline {subsection}{\numberline {2.3}Autres strat\IeC {\'e}gies, al\IeC {\'e}atoires ou/et d\IeC {\'e}terministes}{14}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Strat\IeC {\'e}gie semi-circulaire}{14}{subsubsection.2.3.1}
-\contentsline {paragraph}{}{14}{section*.24}
-\contentsline {paragraph}{}{15}{section*.25}
-\contentsline {paragraph}{R\IeC {\'e}sultat de la simulation}{15}{section*.26}
-\contentsline {subsubsection}{\numberline {2.3.2}Strat\IeC {\'e}gie d'attribution selon la taille de la file d'attente}{16}{subsubsection.2.3.2}
-\contentsline {paragraph}{}{16}{section*.27}
-\contentsline {paragraph}{}{16}{section*.28}
-\contentsline {paragraph}{R\IeC {\'e}sultat de la simulation}{17}{section*.29}
-\contentsline {section}{\numberline {3}Conclusion}{17}{section.3}
-\contentsline {paragraph}{}{17}{section*.30}
+\contentsline {paragraph}{R\IeC {\'e}sultats pour une simulation}{14}{section*.27}
+\contentsline {paragraph}{}{15}{section*.28}
+\contentsline {subsection}{\numberline {2.3}Autres strat\IeC {\'e}gies, al\IeC {\'e}atoires ou/et d\IeC {\'e}terministes}{15}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Strat\IeC {\'e}gie semi-circulaire}{15}{subsubsection.2.3.1}
+\contentsline {paragraph}{}{15}{section*.29}
+\contentsline {paragraph}{}{15}{section*.30}
+\contentsline {paragraph}{}{16}{section*.31}
+\contentsline {paragraph}{}{16}{section*.32}
+\contentsline {paragraph}{R\IeC {\'e}sultat de la simulation}{16}{section*.33}
+\contentsline {subsubsection}{\numberline {2.3.2}Strat\IeC {\'e}gie d'attribution selon la taille de la file d'attente}{17}{subsubsection.2.3.2}
+\contentsline {paragraph}{}{17}{section*.34}
+\contentsline {paragraph}{}{17}{section*.35}
+\contentsline {paragraph}{R\IeC {\'e}sultat de la simulation}{18}{section*.36}
+\contentsline {section}{\numberline {3}Conclusion}{18}{section.3}
+\contentsline {paragraph}{}{18}{section*.37}

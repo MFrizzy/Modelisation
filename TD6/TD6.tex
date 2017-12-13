@@ -166,9 +166,11 @@ endfunction
 \begin{center}
 	\includegraphics[width=425px]{img/inf.PNG}
 \end{center}
+\paragraph{} On remarque bien que la file d'attente ne semble pas se stabiliser, mais augmente de manière continue.
 \begin{center}
 	\includegraphics[width=425px]{img/sup/dist.png}
 \end{center}
+
 \begin{center}
 	\begin{tabular}{c|cc}
 		\hline \hline
@@ -179,6 +181,8 @@ endfunction
 		\hline \hline
 	\end{tabular}
 \end{center}
+\paragraph{}
+Quand on étudie la distribution de la file d'attente pour 60 et 120 secondes, on voit bien que les 2 moyennes et variances sont très différents, en effet l'évolution de la file d'attente ne se stabilise pas mais semble augmenter continuellement : $ mean(Q60)<mean(Q120)$.
 
 \subsubsection{Temps de service inférieur en moyenne aux temps inter-arrivées}
 \paragraph{Paramètre : $n=60$ ; $lambda=0.2$ ; $mu=0.5$}
@@ -198,6 +202,7 @@ endfunction
 		\hline \hline
 	\end{tabular}
 \end{center}
+\paragraph{} On peut bien voir d'après ces graphiques, que la file d'attente est toujours inférieure à 10 et majoritairement proche de 0, on en déduit que le serveur est donc sous-utilisé.
 
 \subsubsection{Temps de service égaux en moyenne aux temps inter-arrivées}
 \paragraph{Paramètre : $n=60$ ; $lambda=0.5$ ; $mu=0.5$}
@@ -217,7 +222,7 @@ endfunction
 		\hline \hline
 	\end{tabular}
 \end{center}
-
+\paragraph{} On voit sur ces graphiques que la plupart des valeurs de la file d'attente sont entre 0 et 10, la taille de la file d'attente tend vers un régime stationnaire.
 
 \section{Etude de la file à 3 serveurs}
 
@@ -254,10 +259,10 @@ function [Q1, Q2, Q3] = circul(Tmax, lambda, mu)
     Q3 = Q3(Q3(:,1)<Tmax,:) 
 endfunction 
 \end{verbatim}
-
-\paragraph{}
-Dans cette fonction, on utilise 2 autres fonctions : 
-
+%
+%\paragraph{}
+%Dans cette fonction, on utilise 2 autres fonctions : 
+%
 %\begin{itemize}
 %	\item $insere(q, ta, ts)$ où :
 %	\begin{itemize}
@@ -281,6 +286,12 @@ Dans cette fonction, on utilise 2 autres fonctions :
 	\includegraphics[width=425px]{img/circul30h.jpg}
 \end{center}
 \paragraph{Simulation sur 30 heures}
+A partir de ces 2 graphiques, on peut clairement voir que :
+\begin{itemize}
+	\item Le serveur 3 est sous utilisé
+	\item Le serveur 2 recoit légèrement trop de requete qu'il ne peut traiter, il finit par grimper doucement mais surement vers l'infini
+	\item Le serveur 1 est complétement 'largué', la taille de sa fille d'attente croît de manière vertigineuse
+\end{itemize}
 
 \subsubsection{Etude numérique du temps de traversée du système pour une requête}
 
@@ -345,6 +356,11 @@ Les résultats peuvent varier, mais sont proches de ces résultats :
 \end{center}
 
 \subsubsection{Recherche d'un régime stationnaire}
+
+\paragraph{}
+Au vu des résultats, on peut en conclure que la stratégie circulaire n'est pas du tout optimale, on remarque aisément que la taille de la file d'attente du service ne fait que croite sans jamais se stabiliser.
+\paragraph{}
+On va donc chercher d'autres stratégies qui seraient plus adaptés et plus optimale pour le service.
 
 \subsection{Simulation de la stratégie d'affection aléatoire proportionnelle}
 \subsubsection{Simulation}
@@ -464,11 +480,16 @@ On remarque que les résultats semblent plus équilibrés, et que les serveurs s
 \end{tabular}
 
 \paragraph{}
-Après étude, on remarque une suite récurrente dans l'affectation aux serveur le plus adéquat :
-
+La solution que nous proposons ici est une solution déterministe, semi-circulaire, basée sur une suite d'attribution optimisée.
+Pour ce faire, nous sommes partis d'une idée simple: attribuer les requêtes aux différents serveurs, en choisissant à chaque fois le serveur qui présente le temps de traitement restant le plus petit.
+\paragraph{}
+Ainsi, au fur et à mesure des attributions, il en ressort une suite récurrente composée de 10 éléments :
 \begin{center}
 	$[1,3,2,3,3,1,2,3,3,2]$
 \end{center}
+\paragraph{}
+On parcourt ensuite cette suite pour obtenir un ordre d'attribution plutôt optimisé.
+
 \paragraph{}On obtient donc la fonction suivante $semicircul(Tmax,lambda,mu)$:
 \begin{verbatim}
 function [Q1, Q2, Q3] = semicircul(Tmax, lambda, mu)

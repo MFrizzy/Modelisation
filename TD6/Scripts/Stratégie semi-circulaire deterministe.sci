@@ -74,7 +74,7 @@ plot2d(Q3(:,1), Q3(:,2), style = 3)
 
 // WLH CHOIX 
 
-function [Q1, Q2, Q3] = choix(Tmax, lambda, mu)
+function [Q1, Q2, Q3,ind1,tq1] = choix(Tmax, lambda, mu)
     Q1 = [0, 0, 0]; Q2 = Q1; Q3 = Q1;
     i = 0;
     ta = 0; 
@@ -114,7 +114,7 @@ endfunction
 lambda= 1/3; // le temps entre chaque requête
 mu=[1/15,1/10,1/6]; // les temps de traitmement de chaque serveur
 for i=1:1 
-    [Q1, Q2, Q3] = choix(3600, lambda, mu); 
+    [Q1, Q2, Q3,ind1,tq1] = choix(3600, lambda, mu); 
     plot2d(Q1(:,1), Q1(:,2), style = 1)
     plot2d(Q2(:,1), Q2(:,2), style = 2)
     plot2d(Q3(:,1), Q3(:,2), style = 3)
