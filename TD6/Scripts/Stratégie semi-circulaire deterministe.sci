@@ -30,8 +30,8 @@ endfunction
 
 
 function t = randExp(n, lambda)
-// renvoie n réalisation d'une loi exponentielle de paramètre lambda
-t = -log(1 - rand(n,1)) / lambda
+    // renvoie n réalisation d'une loi exponentielle de paramètre lambda
+    t = -log(1 - rand(n,1)) / lambda
 endfunction
 
 // Strategie semi-circulaire deterministe
@@ -68,3 +68,54 @@ mu = [1/15, 1/10, 1/6]; // loi des temps de service des trois serveurs
 plot2d(Q1(:,1), Q1(:,2), style = 1)
 plot2d(Q2(:,1), Q2(:,2), style = 2)
 plot2d(Q3(:,1), Q3(:,2), style = 3)
+
+
+
+
+// WLH CHOIX 
+
+function [Q1, Q2, Q3] = choix(Tmax, lambda, mu)
+    Q1 = [0, 0, 0]; Q2 = Q1; Q3 = Q1;
+    i = 0;
+    ta = 0; 
+    while (ta < Tmax)
+        ia = randExp(1, lambda)
+        i = i+1 
+        ta = ta + ia 
+        ind1 = sum(Q1(:,1)<ta)// on récupère les files d'attentes de chaque serveur
+        ind2 = sum(Q2(:,1)<ta)
+        ind3 = sum(Q3(:,1)<ta)
+        tq1 = Q1(ind1,2) // on pondère ensuite par le temps de traitement moyen de chaque serveur
+        tq2 = Q2(ind2,2)
+        tq3 = Q3(ind3,2)
+        if tq1 ==min(tq1,tq2,tq3) then // enfin on choisit le serveur qui a le plus petit résultat
+            nq = 1
+        elseif tq2 ==min(tq1,tq2,tq3)
+            nq = 2
+        else
+            nq = 3
+        end
+        ts = randExp(1, mu(nq))
+
+        select nq 
+        case 1 
+            Q1 = insere(Q1, ta, ts)
+        case 2 
+            Q2 = insere(Q2, ta, ts)
+        else
+            Q3 = insere(Q3, ta, ts)
+        end
+    end
+    Q1 = Q1(Q1(:,1)<Tmax,:) // on rennvoie les 3 files
+    Q2 = Q2(Q2(:,1)<Tmax,:)
+    Q3 = Q3(Q3(:,1)<Tmax,:)
+endfunction
+
+lambda= 1/3; // le temps entre chaque requête
+mu=[1/15,1/10,1/6]; // les temps de traitmement de chaque serveur
+for i=1:1 
+    [Q1, Q2, Q3] = choix(3600, lambda, mu); 
+    plot2d(Q1(:,1), Q1(:,2), style = 1)
+    plot2d(Q2(:,1), Q2(:,2), style = 2)
+    plot2d(Q3(:,1), Q3(:,2), style = 3)
+end
