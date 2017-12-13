@@ -502,7 +502,10 @@ endfunction
 	\includegraphics[width=425px]{img/semiCirculaire.png}
 \end{center}
 
-\subsubsection{Stratégie }
+\subsubsection{Stratégie d'attribution selon la taille de la file d'attente}
+
+\paragraph{}
+Cette solution pour l'attribution des requêtes aux différents serveurs fonctionne de la sorte :  pour chaque nouvelle requête, on observe le nombre de requêtes file d'attente de chaque serveur. On pondère ensuite ce nombre par le temps de traitement des requêtes moyen de chaque serveur. On choisit finalement le serveur qui obtient le plus petit résultat pour lui attribuer la nouvelle requête.
 
 \paragraph{}On obtient donc la fonction suivante $choix(Tmax,lambda,mu)$:
 \begin{verbatim}

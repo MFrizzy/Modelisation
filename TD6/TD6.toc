@@ -43,8 +43,9 @@
 \contentsline {paragraph}{}{15}{section*.24}
 \contentsline {paragraph}{}{15}{section*.25}
 \contentsline {paragraph}{R\IeC {\'e}sultat de la simulation}{16}{section*.26}
-\contentsline {subsubsection}{\numberline {2.3.2}Strat\IeC {\'e}gie }{16}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.2}Strat\IeC {\'e}gie d'attribution selon la taille de la file d'attente}{16}{subsubsection.2.3.2}
 \contentsline {paragraph}{}{16}{section*.27}
-\contentsline {paragraph}{R\IeC {\'e}sultat de la simulation}{17}{section*.28}
+\contentsline {paragraph}{}{16}{section*.28}
+\contentsline {paragraph}{R\IeC {\'e}sultat de la simulation}{17}{section*.29}
 \contentsline {section}{\numberline {3}Conclusion}{18}{section.3}
-\contentsline {paragraph}{}{18}{section*.29}
+\contentsline {paragraph}{}{18}{section*.30}
